@@ -177,7 +177,7 @@ class Multisite_Content_Copier_Network_Main_Menu extends Multisite_Content_Copie
 
  	public function add_styles() {
  		if ( get_current_screen()->id == $this->page_id . '-network' ) {
- 			wp_enqueue_style( 'mcc-wizard-css', MULTISTE_CC_ASSETS_URL . 'css/wizard.css', '20131128' );
+			wp_enqueue_style( 'mcc-wizard-css', MULTISTE_CC_ASSETS_URL . 'css/wizard.css', array(), filemtime( MULTISTE_CC_PLUGIN_DIR . 'assets/css/wizard.css' ) );
 
     	}
 

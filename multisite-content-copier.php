@@ -4,12 +4,13 @@ Plugin Name: Multisite-Content-Kopierer
 Plugin URI: https://cp-psource.github.io/multisite-content-copier/
 Description: Kopiere alle Inhalte von einer beliebigen Webseite in Deinem Netzwerk auf eine andere Webseite oder Gruppe von Webseiten im selben Netzwerk.
 Author: PSOURCE
-Version: 1.5.9
+Version: 1.0.0
 Author URI: https://github.com/cp-psource
 Text Domain: mcc
 Domain Path: languages
 Requires at least: 4.9
 Tested up to: 6.8.1
+Requires PHP: 8.0
 Network:true
 Tags: multisite plugin, multisite, classicpress-plugin
 */
@@ -127,7 +128,8 @@ class Multisite_Content_Copier {
 	private function set_globals() {
 
 		// Basics
-		define( 'MULTISTE_CC_VERSION', '1.5.9' );
+		// Internal schema version; keep independent from the public release version.
+		define( 'MULTISTE_CC_DB_VERSION', '1.6.0' );
 		define( 'MULTISTE_CC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 		define( 'MULTISTE_CC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'MULTISTE_CC_PLUGIN_FILE_DIR', plugin_dir_path( __FILE__ ) . 'multisite-content-copier.php' );
@@ -202,7 +204,7 @@ class Multisite_Content_Copier {
 
 		$current_version = get_site_option( self::$version_option_slug, '1.0.4' );
 
-		if ( $current_version === MULTISTE_CC_VERSION )
+		if ( $current_version === MULTISTE_CC_DB_VERSION )
 			return;
 
 		if ( version_compare( $current_version, '1.0.4', '<=' ) ) {
@@ -230,7 +232,7 @@ class Multisite_Content_Copier {
 		}
 
 
-		update_site_option( self::$version_option_slug, MULTISTE_CC_VERSION );
+		update_site_option( self::$version_option_slug, MULTISTE_CC_DB_VERSION );
 	}
 
 
@@ -244,7 +246,7 @@ class Multisite_Content_Copier {
 	 * Actions executed when the plugin is deactivated
 	 */
 	public function activate() {
-		update_site_option( self::$version_option_slug, MULTISTE_CC_VERSION );
+		update_site_option( self::$version_option_slug, MULTISTE_CC_DB_VERSION );
 		$model = mcc_get_model();
 		$model->create_schema();
 	}

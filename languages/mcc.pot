@@ -39,8 +39,8 @@ msgstr ""
 
 #: admin/edit-post.php:71
 msgid ""
-"Du hast diesen Beitrag bereits kopiert, ein erneutes Kopieren kann zu "
-"doppelten Beiträgen führen"
+"Bereits vorhandene Kopien werden übersprungen. Änderungen auf den "
+"Zielwebseiten bleiben erhalten."
 msgstr ""
 
 #: admin/edit-post.php:88

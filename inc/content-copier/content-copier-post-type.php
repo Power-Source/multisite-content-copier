@@ -16,6 +16,7 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
 	 * )
 	 */
 	private $posts_created = array();
+	private $existing_posts = array();
 
 	/**
 	 * Saves source parents relationships
@@ -41,16 +42,30 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
 
 	public function execute() {
 
+		$this->posts_created = array();
+		$this->existing_posts = array();
+
 		if ( $this->args['copy_parents'] )
 			$this->add_parents_to_items_list();
 
 		foreach( $this->items as $item_id ) {
 
+			$existing_post_id = mcc_get_copier_model()->get_copied_post_id( $this->orig_blog_id, $item_id );
+			if ( $existing_post_id ) {
+				$this->existing_posts[ $item_id ] = $existing_post_id;
+				$this->log( "-- SKIP EXISTING COPY: " . $item_id . " => " . $existing_post_id );
+				continue;
+			}
+
 			$this->log( "-- COPY ITEM: " . $item_id );
 			$post_created = $this->copy_item( $item_id );
 
 			$this->posts_created[ $item_id ] = $post_created;
-			update_post_meta( $item_id, 'mcc_copied', true, $this->posts_created[ $item_id ] );
+			if ( $post_created && ! is_wp_error( $post_created ) ) {
+				switch_to_blog( $this->orig_blog_id );
+				update_post_meta( $item_id, 'mcc_copied', true );
+				restore_current_blog();
+			}
 		}
 
 		$this->remap_parents();
@@ -110,10 +125,15 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
 	 */
 	public function remap_parents() {
 		foreach ( $this->posts_created as $source_post_id => $new_post_id ) {
-			if ( ! empty( $this->parents_mapping[ $source_post_id ] ) && ! empty( $this->posts_created[ $this->parents_mapping[ $source_post_id ] ] ) ) {
+			if ( ! empty( $this->parents_mapping[ $source_post_id ] ) ) {
+				$source_parent_id = $this->parents_mapping[ $source_post_id ];
+				$parent_id = $this->posts_created[ $source_parent_id ] ?? $this->existing_posts[ $source_parent_id ] ?? 0;
+				if ( ! $parent_id )
+					continue;
+
 				$args = array(
 					'ID' => $new_post_id,
-					'post_parent' => $this->posts_created[ $this->parents_mapping[ $source_post_id ] ]
+					'post_parent' => $parent_id
 				);
 				wp_update_post( $args );
 			}
@@ -213,6 +233,9 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
 
 			// Insert post meta
 			foreach ( $orig_post_meta as $post_meta ) {
+				if ( '_mcc_source' === $post_meta->meta_key )
+					continue;
+
 				$unserialized_meta_value = maybe_unserialize( $post_meta->meta_value );
 				update_post_meta( $new_item_id, $post_meta->meta_key, $unserialized_meta_value );
 
@@ -226,7 +249,9 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
 				 * @param Integer $meta_value Unserialized Metadata value
 				 */
 				do_action( 'mcc_copy_post_meta', $this->orig_blog_id, $item_id, $new_item_id, $post_meta->meta_key, $unserialized_meta_value );
-			}			
+			}
+
+			update_post_meta( $new_item_id, '_mcc_source', $this->orig_blog_id . ':' . $item_id );
 
 			// Set post format
 			switch_to_blog( $this->orig_blog_id );

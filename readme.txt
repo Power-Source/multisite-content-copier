@@ -2,9 +2,9 @@
 Contributors: DerN3rd (PSOURCE)
 Tags: multisite, suche, netzwerk-kopierer
 Requires at least: 4.9
-Tested up to: 4.9
-Stable tag: 1.5.9
-Requires PHP: 7.0
+Tested up to: 6.8.1
+Stable tag: 1.0.0
+Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,35 +29,6 @@ Seiten, Beiträge, benutzerdefinierte Beitragstypen, Benutzer und Plugins könne
 
 == ChangeLog ==
 
-= 1.6.0 =
+= 1.0.0 =
+* First release
 
-* Update: Updater 1.3
-* Fix: Deprecated dynamic propertys
-
-= 1.5.9 =
-
-* Fix: PHP Deprecated:  Required parameter $url follows
-* Fix: Fehler beim Rendern der Dashboardseite seit CP1.6
-
-= 1.5.8 =
-
-* Fix: PHP Deprecated:  Required parameter
-* Better Readme
-* ClassicPress
-* Links-corrected
-* Fix: undefined constant MULTISTE_CC_LANG_DOMAIN
-* Update: PS Updater 1.2
-* Hinzugefügt: Englische Übersetzungen
-* Links aktualisiert
-
-= 1.5.7 =
-
-* Textanpassungen
-* Deprecated .click() Fix
-* Linkanpassung für Blog-Vorlagen Integration
-* PSource Updater v1.1
-* Blogvorlagen-Integration
-
-= 1.5.6 =
-
-* Release 

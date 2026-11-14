@@ -3,6 +3,7 @@
 class MCC_BrainPress_Integration {
 
 	public $units_copied = array();
+	public $copied_posts = array();
 
 	public function __construct() {
 		add_action( 'mcc_copy_posts', array( $this, 'maybe_copy_units' ), 10, 3 );

@@ -228,11 +228,10 @@ msgstr "You add at least one user to the list"
 
 #: admin/edit-post.php:71
 msgid ""
-"Du hast diesen Beitrag bereits kopiert, ein erneutes Kopieren kann zu "
-"doppelten Beiträgen führen"
+"Bereits vorhandene Kopien werden übersprungen. Änderungen auf den "
+"Zielwebseiten bleiben erhalten."
 msgstr ""
-"You have already copied this post, copying it again may result in duplicate "
-"posts"
+"Existing copies are skipped. Changes on the destination sites are preserved."
 
 #: admin/pages/network-main-page.php:1231
 msgid "Du hast eine falsche Gruppe ausgewählt"

@@ -68,7 +68,7 @@ class MCC_Post_Meta_Box {
 
 			?>
 				<?php if ( get_post_meta( $post->ID, 'mcc_copied' ) ): ?>
-					<p><?php _e( 'Du hast diesen Beitrag bereits kopiert, ein erneutes Kopieren kann zu doppelten Beiträgen führen', MULTISTE_CC_LANG_DOMAIN ); ?></p>
+					<p><?php _e( 'Bereits vorhandene Kopien werden übersprungen. Änderungen auf den Zielwebseiten bleiben erhalten.', MULTISTE_CC_LANG_DOMAIN ); ?></p>
 				<?php endif; ?>
 				
 				<?php $this->render_form_fields( 'mcc_' ); ?>

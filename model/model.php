@@ -26,7 +26,7 @@ class Multisite_Content_Copier_Model {
 	/**
 	 * Return an instance of the class
 	 * 
-	 * @since 0.1
+	 * @since 1.0.0
 	 * 
 	 * @return Object
 	 */
@@ -61,7 +61,7 @@ class Multisite_Content_Copier_Model {
 	/**
 	 * Create the required DB schema
 	 * 
-	 * @since 0.1
+	 * @since 1.0.0
 	 */
 	public function create_schema() {
 		$this->create_queue_table();

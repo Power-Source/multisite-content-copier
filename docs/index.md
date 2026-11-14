@@ -1,209 +1,480 @@
+# Benutzerhandbuch: Multisite-Content-Kopierer
+
+**Release 1.0.0**
+
+Mit dem Multisite-Content-Kopierer übernimmst du ausgewählte Inhalte innerhalb deines Multisite-Netzwerks auf andere Websites. Dieses Handbuch begleitet dich von der ersten Kopie bis zur Arbeit mit Webseiten-Gruppen.
+
+Die Screenshots zeigen eine ClassicPress-Testumgebung mit den Demo-Websites **Handbuch – Quelle** und **Handbuch – Ziel**. Namen und IDs sind Beispiele. In deinem Netzwerk können einzelne Beschriftungen und die Darstellung abweichen.
+
+## Inhalt
+
+1. [Voraussetzungen](#voraussetzungen)
+2. [Installation und Orientierung](#installation)
+3. [Vor dem ersten Kopieren](#vorbereitung)
+4. [Seiten und Beiträge kopieren](#seiten-kopieren)
+5. [Die Zusatzoptionen verstehen](#zusatzoptionen)
+6. [Was bei erneutem Kopieren passiert](#vorhandene-kopien)
+7. [Webseiten-Gruppen verwenden](#gruppen)
+8. [Direkt aus dem Editor kopieren](#editor)
+9. [Benutzer übernehmen](#benutzer)
+10. [Plugins aktivieren](#plugins)
+11. [Eigene Beitragstypen kopieren](#beitragstypen)
+12. [PS Blog Templates verwenden](#blog-templates)
+13. [Kopieraufträge und größere Netzwerke](#kopierauftraege)
+14. [Ergebnisse prüfen und Probleme lösen](#hilfe)
+15. [Häufige Fragen](#fragen)
+
+<a id="voraussetzungen"></a>
+## 1. Voraussetzungen
+
+Du brauchst:
+
+- Ein eingerichtetes **ClassicPress- oder WordPress-Multisite-Netzwerk**. Das Plugin ist nicht für eine alleinstehende Einzelwebsite gedacht.
+- Zugang zur **Netzwerkverwaltung**. Die Kopierbox im Editor ist für Superadministratoren vorgesehen.
+- **PHP ab Version 8.0**. Nutze nach Möglichkeit eine PHP-Version, die noch Sicherheitsupdates erhält.
+- Mindestens eine Quellwebsite mit Inhalten und eine andere Website als Ziel.
+
+Bei eigenen Beitragstypen, beispielsweise Produkten oder Veranstaltungen, müssen die dazugehörigen Funktionen auch auf der Zielwebsite verfügbar sein.
+
+<a id="installation"></a>
+## 2. Installation und Orientierung
+
+### Plugin installieren
+
+1. Wechsle über **Meine Websites → Netzwerkverwaltung** in die Netzwerkverwaltung.
+2. Öffne **Plugins → Installieren → Plugin hochladen**.
+3. Wähle die ZIP-Datei des Multisite-Content-Kopierers.
+4. Installiere das Plugin und klicke auf **Netzwerkweit aktivieren**.
+
+Wenn das Plugin bereits installiert ist, genügt die netzwerkweite Aktivierung in der Plugin-Liste.
+
+### Die drei Arbeitsbereiche
+
+| Menüpunkt | Hier erledigst du |
+| --- | --- |
+| **Content Kopierer** | Inhalte auswählen und Kopieraufträge starten |
+| **Content Kopierer → Seiten-Gruppen** | Gruppen anlegen und Websites zuordnen |
+| **Content Kopierer → Einstellungen** | Die optionale PS Blog Templates-Integration einschalten |
+
+Die ersten beiden Bereiche reichen für die normale Benutzung aus.
+
+![Start des Kopierassistenten: Seiten, Beiträge, eigene Beitragstypen, Benutzer oder Plugins auswählen](screenshots/01-assistent-start.png)
+
+*Der Assistent zeigt oben deinen aktuellen Schritt.*
+
+<a id="vorbereitung"></a>
+## 3. Vor dem ersten Kopieren
+
+### Quelle und Ziel unterscheiden
+
+- **Quellwebsite:** Hier befindet sich das Original.
+- **Zielwebsite:** Hier soll eine Kopie entstehen.
+- **Seite als Inhalt:** Eine einzelne Inhaltsseite, zum Beispiel „Über uns“.
+- **Website als Ziel:** Ein vollständiger Standort innerhalb deines Netzwerks.
+
+Die Oberfläche verwendet teilweise „Seite“, „Webseite“ und „Blog“ für eine Website. Prüfe deshalb immer, ob gerade ein Inhalt oder ein Ziel gemeint ist.
+
+### Kurze Checkliste
+
+- [ ] Das Original ist gespeichert und enthält die gewünschten Inhalte.
+- [ ] Der Veröffentlichungsstatus passt: Ein veröffentlichter Inhalt wird auch auf dem Ziel veröffentlicht.
+- [ ] Quellwebsite und Zielwebsite sind eindeutig.
+- [ ] Die benötigten Plugins sind auf der Zielwebsite aktiv.
+- [ ] Du weißt, ob Bilder, Kommentare und Kategorien mit übernommen werden sollen.
+- [ ] Für wichtige Zielwebsites liegt eine Sicherung vor.
+
+**Empfehlung:** Beginne mit einer einzelnen Seite und einer einzelnen Zielwebsite. Prüfe das Ergebnis, bevor du viele Inhalte oder alle Websites auswählst.
+
+<a id="seiten-kopieren"></a>
+## 4. Seiten und Beiträge kopieren
+
+Im Beispiel übernehmen wir **„Willkommen im Netzwerk“** von **Handbuch – Quelle** auf **Handbuch – Ziel**.
+
+### Schritt 1: Aktion auswählen
+
+1. Öffne **Content Kopierer** in der Netzwerkverwaltung.
+2. Wähle **Seiten**.
+3. Klicke auf **Nächster Schritt »**.
+
+Für Blogbeiträge wählst du stattdessen **Beiträge**. Die weiteren Schritte sind weitgehend gleich.
+
+### Schritt 2: Quelle auswählen
+
+Du hast zwei Möglichkeiten:
+
+- Gib die **Website-ID** in das erste Feld ein.
+- Oder suche über **Webseiten-URL** nach dem Unterordner beziehungsweise der Subdomain.
+
+Bei einer Adresse wie `example.org/berlin/` suchst du nach `berlin`. Bei `berlin.example.org` ebenfalls.
+
+**Klicke einen Suchvorschlag an.** Nur den Namen einzutippen reicht nicht: Durch die Auswahl wird die Website-ID übernommen.
+
+Prüfe die ausgewählte Quelle und klicke auf **Nächster Schritt »**.
+
+![Die Demo-Quellwebsite ist ausgewählt; ihre Website-ID lautet in diesem Beispiel 30](screenshots/02-quelle-auswaehlen.png)
+
+*Die ID 30 gehört nur zur abgebildeten Demo. Verwende die ID deiner eigenen Quellwebsite.*
+
+### Schritt 3: Elemente auswählen
+
+1. Suche den gewünschten Inhalt in der Liste.
+2. Setze das Häkchen neben dem Titel.
+3. Klicke auf **Elemente zur Liste hinzufügen**.
+4. Kontrolliere, dass der Titel nun **oberhalb der Zusatzoptionen in der Auswahlliste** steht.
+5. Wähle bei Bedarf die [Zusatzoptionen](#zusatzoptionen).
+6. Klicke auf **Nächster Schritt »**.
+
+> **Wichtig:** Das Häkchen in der Tabelle allein übernimmt den Inhalt noch nicht in die Kopierauswahl. Entscheidend ist die separate Auswahlliste.
+
+Mit **Entfernen** nimmst du einen Inhalt wieder aus der Auswahlliste. Das löscht nicht das Original.
+
+![Eine Seite wurde zur Auswahlliste hinzugefügt; darunter stehen Zusatzoptionen und Inhaltstabelle](screenshots/03-elemente-auswaehlen.png)
+
+*Die Zeile „Willkommen im Netzwerk“ oberhalb der Optionen bestätigt die Auswahl.*
+
+### Schritt 4: Ziele auswählen
+
+#### Eine oder mehrere einzelne Websites
+
+1. Wähle **Einzelne Seite(n)**.
+2. Trage die Website-ID ein oder wähle die Website über die URL-Suche aus.
+3. Klicke auf **Seite hinzufügen**.
+4. Prüfe, dass die Zielwebsite in der Liste erscheint.
+5. Wiederhole die Schritte für weitere Zielwebsites.
+
+Eine Website aus der Liste entfernst du mit **Entfernen**. Dadurch wird nur die Auswahl geändert.
+
+![Die Zielwebsite wurde zur Zielliste hinzugefügt](screenshots/04-ziele-auswaehlen.png)
+
+*Auch hier reicht die Eingabe allein nicht: Die Website muss in der Zielliste stehen.*
+
+#### Eine Webseiten-Gruppe
+
+Wähle **Webseiten-Gruppe** und danach die gewünschte Gruppe im Auswahlfeld. Wie du Gruppen anlegst, steht im [Gruppen-Kapitel](#gruppen).
+
+#### Alle Websites
+
+Mit **Alle Seiten** richtest du den Auftrag an die Websites des Netzwerks. Die Quellwebsite selbst wird nicht nochmals mit einer Kopie ihres Originals versorgt.
+
+Verwende diese Auswahl nur, wenn der Inhalt wirklich für das gesamte Netzwerk bestimmt ist.
+
+### Schritt 5: Auftrag anlegen und Ergebnis prüfen
+
+Kontrolliere **vor dem nächsten Klick** die gewählten Inhalte, Optionen und Ziele.
+
+**Nächster Schritt »** nach der Zielauswahl legt den Kopierauftrag an. Es folgt keine zusätzliche Bestätigungsseite.
+
+![Der Assistent zeigt seine Abschlussmeldung](screenshots/05-kopieren-abgeschlossen.png)
+
+**Die Abschlussmeldung ist noch keine Kontrolle aller Zielwebsites.** Die Verarbeitung findet beim nächsten Aufruf der jeweiligen Zielwebsite statt.
+
+1. Öffne das Dashboard der Zielwebsite, nicht nur die Netzwerkverwaltung.
+2. Öffne dort **Seiten** beziehungsweise **Beiträge**.
+3. Suche die Kopie.
+4. Öffne sie und prüfe Inhalt, Veröffentlichungsstatus und gegebenenfalls Bilder und Zuordnungen.
+5. Prüfe danach die öffentliche Ansicht.
+
+![Die übernommene Seite auf der Zielwebsite](screenshots/06-kopierte-seite.png)
+
+*Die Kopie gehört jetzt zur Zielwebsite. Das Original bleibt auf der Quellwebsite erhalten.*
+
+<a id="zusatzoptionen"></a>
+## 5. Die Zusatzoptionen verstehen
+
+Die Zusatzoptionen gelten für **neu erstellte Kopien**. Sie verändern keine bereits vorhandenen Kopien.
+
+| Option | Bedeutung | Wann sinnvoll? |
+| --- | --- | --- |
+| **Bilder kopieren** | Übernimmt die zugehörigen Bilder. Für die Übernahme von Beitragsbildern muss diese Option ausgewählt sein. | Wenn die Zielwebsite eigene Bilddateien erhalten soll |
+| **Erstellungsdatum … aktualisieren** | Setzt das Datum der neuen Kopie auf den Zeitpunkt der Verarbeitung. Ohne die Option wird das ursprüngliche Datum übernommen. | Wenn die Kopie als neuer Inhalt erscheinen soll |
+| **Eltern kopieren** | Übernimmt übergeordnete Inhalte und ordnet die neue Kopie der passenden Elternseite zu. Bereits vorhandene Elternkopien werden wiederverwendet. | Bei hierarchischen Seiten, etwa „Angebote → Beratung“ |
+| **Kommentare kopieren** | Übernimmt die Kommentare des Originals. | Wenn die Diskussion zum Inhalt gehören soll |
+| **Bedingungen kopieren (Tags & Kategorien)** | Übernimmt Kategorien, Schlagwörter beziehungsweise die zugehörigen Begriffe. Diese Option erscheint bei Beiträgen und passenden eigenen Beitragstypen. | Wenn die Einordnung auf der Zielwebsite benötigt wird |
+
+### Hinweise zu Bildern
+
+Ohne **Bilder kopieren** können eingebundene Bilder weiterhin auf Dateien der Quellwebsite verweisen. Das ist nicht dasselbe wie eine eigene Bildübernahme auf dem Ziel.
+
+Prüfe bei aktivierter Bildoption sowohl den Inhalt als auch das Beitragsbild und die Mediathek der Zielwebsite. Externe oder nicht erreichbare Bilder brauchen eine zusätzliche Kontrolle.
+
+### Hinweise zu Veröffentlichung und Darstellung
+
+Der Inhalt behält grundsätzlich seinen Status. Ein **Entwurf** bleibt ein Entwurf; ein **veröffentlichter** Inhalt kann auf der Zielwebsite sofort öffentlich sein.
+
+Theme, Seitenvorlagen und Funktionen der Zielwebsite bestimmen die Darstellung. Eine korrekt übernommene Seite kann dort anders aussehen als auf der Quelle.
+
+<a id="vorhandene-kopien"></a>
+## 6. Was bei erneutem Kopieren passiert
+
+Das Plugin erkennt, aus welcher **Quellwebsite** und welchem **Originalinhalt** eine Kopie stammt.
+
+Für dieselbe Kombination auf derselben Zielwebsite gilt:
+
+- Die vorhandene Kopie wird **übersprungen**.
+- Es wird kein zweiter Inhalt dafür angelegt.
+- Lokale Änderungen an Text und Seitenhierarchie bleiben erhalten.
+- Kommentare und weitere ausgewählte Bestandteile werden nicht erneut kopiert.
+- Eine bereits kopierte Elternseite wird bei neuen untergeordneten Seiten wiederverwendet.
+
+Das gilt auch, wenn du denselben Inhalt mehrfach auswählst oder später über eine andere Zielgruppe erneut an dieselbe Website sendest.
+
+### Was die Erkennung nicht tut
+
+Sie gleicht **keine Titel oder Texte** ab. Ein unabhängig angelegter Inhalt mit demselben Titel ist nicht automatisch dieselbe Kopie.
+
+Sie ist auch keine Synchronisierung. Änderungen am Original und nachträglich gewählte Bild- oder Kommentaroptionen aktualisieren eine vorhandene Kopie nicht. Bearbeite diese bei Bedarf direkt auf der Zielwebsite.
+
+### Wenn eine Kopie im Papierkorb liegt
+
+Auch eine Kopie im Papierkorb zählt als vorhanden. Ein neuer Kopierlauf legt deshalb keinen Ersatz an und stellt den Inhalt nicht ungefragt wieder her.
+
+Stelle den Inhalt auf der Zielwebsite aus dem Papierkorb wieder her, wenn du ihn weiterverwenden möchtest.
+
+Erst nach dem **endgültigen Löschen** kann ein neuer Kopierlauf eine neue Kopie anlegen. Sichere vorher wichtige lokale Änderungen.
+
+<a id="gruppen"></a>
+## 7. Webseiten-Gruppen verwenden
+
+Gruppen sind gespeicherte Zusammenstellungen von Zielwebsites. Sie eignen sich beispielsweise für Standorte, Sprachbereiche oder Kundenprojekte.
+
+### Eine Gruppe anlegen
+
+1. Öffne **Content Kopierer → Seiten-Gruppen**.
+2. Wähle den Tab **Gruppen**.
+3. Gib unter **Neue Gruppe hinzufügen** einen verständlichen Namen ein.
+4. Klicke auf **Neue Gruppe hinzufügen**.
+
+![Gruppenverwaltung mit einer Demo-Gruppe und dem Formular für neue Gruppen](screenshots/07-gruppe-anlegen.png)
+
+*„Handbuch – Standorte“ ist eine Beispielgruppe.*
+
+### Websites zuordnen
+
+1. Wechsle zum Tab **Webseiten**.
+2. Suche die gewünschten Websites nach ihrem URL-Bestandteil oder ihrer ID.
+3. Setze die Häkchen neben den Websites.
+4. Wähle oben die Zielgruppe aus.
+5. Klicke auf **Zu Gruppe zuweisen**.
+6. Prüfe die Spalte **Gruppen**.
+
+![Eine Demo-Website wurde der Gruppe zugeordnet](screenshots/08-webseite-zuordnen.png)
+
+*Die Gruppen-Spalte zeigt, zu welchen Gruppen eine Website gehört.*
+
+Eine Website kann zu mehreren Gruppen gehören. Zum Entfernen wählst du Website und Gruppe aus und klickst auf **Aus der Gruppe entfernen**.
+
+### Eine Gruppe als Kopierziel verwenden
+
+Wähle im vierten Assistentenschritt **Webseiten-Gruppe** und die passende Gruppe. Der Auftrag wird für die zugeordneten Websites angelegt.
+
+Prüfe die Mitgliedschaft vor größeren Kopieraktionen. Eine Gruppe ist eine Zielauswahl, keine automatische Verbindung für spätere Änderungen.
+
+<a id="editor"></a>
+## 8. Direkt aus dem Editor kopieren
+
+Für einzelne gespeicherte Inhalte gibt es im klassischen Editor die Box **Multisite Content Kopierer: Inhalte kopieren**.
+
+1. Öffne einen bestehenden Beitrag, eine Seite oder einen unterstützten eigenen Beitragstyp zum Bearbeiten.
+2. Speichere deine Änderungen, bevor du kopierst.
+3. Suche die Kopierbox. Sie befindet sich unterhalb des Editors; gegebenenfalls musst du nach unten scrollen.
+4. Wähle **Webseiten-Gruppe** oder bewusst **Alle Webseiten**.
+5. Wähle die gewünschten Zusatzoptionen.
+6. Klicke auf **Kopieren**.
+7. Öffne die Zielwebsite und kontrolliere das Ergebnis.
+
+![Die Kopierbox im Editor mit einer ausgewählten Webseiten-Gruppe](screenshots/10-direkt-im-editor.png)
+
+**Der Kopieren-Button legt den Auftrag direkt an.** Er speichert nicht gleichzeitig ungespeicherte Änderungen am Original.
+
+Für einzelne Zielwebsites ohne Gruppe verwendest du den Netzwerk-Assistenten. Die Editorbox bietet diese individuelle Zielliste nicht an.
+
+Bereits vorhandene Kopien werden auch bei diesem Weg übersprungen.
+
+<a id="benutzer"></a>
+## 9. Benutzer übernehmen
+
+In einer Multisite sind Benutzerkonten bereits netzwerkweit vorhanden. Das Plugin fügt ausgewählte Konten einer weiteren Website hinzu; es erstellt keine zusätzlichen Konten mit neuen Passwörtern.
+
+### Ausgewählte Benutzer hinzufügen
+
+1. Wähle im ersten Assistentenschritt **Benutzer**.
+2. Wähle die Website aus, deren Benutzer du übernehmen möchtest.
+3. Wähle **Ausgewählte Benutzer**.
+4. Suche die gewünschten Konten und markiere sie.
+5. Klicke auf **Elemente zur Liste hinzufügen**.
+6. Prüfe die separate Auswahlliste oberhalb der Tabelle.
+7. Wähle die Zielwebsites und lege den Auftrag an.
+8. Öffne auf der Zielwebsite **Benutzer → Alle Benutzer**.
+9. Kontrolliere die übernommenen Konten und ihre Rollen.
+
+![Ein Demo-Benutzer wurde zur Kopierauswahl hinzugefügt](screenshots/11-benutzer-auswaehlen.png)
+
+*Die abgebildete E-Mail-Adresse ist eine nicht zustellbare Demo-Adresse.*
+
+### Alle Benutzer einer Quelle hinzufügen
+
+Mit **Alle Benutzer** werden die Benutzer der ausgewählten Quellwebsite übernommen. Prüfe vorher, ob wirklich alle diese Konten Zugriff auf die Ziele erhalten sollen.
+
+### Rollen und bestehende Mitgliedschaften
+
+- Eine vorhandene Rolle der Quelle wird übernommen, wenn sie auf der Zielwebsite verfügbar ist.
+- Ist die Rolle dort nicht verfügbar, ist die Standard-Ersatzrolle **Abonnent**.
+- Bereits zur Zielwebsite gehörende Benutzer werden übersprungen. Ihre dortige Rolle wird nicht durch den Kopierauftrag überschrieben.
+
+Prüfe insbesondere Administrator-, Redakteurs- und individuelle Rollen bewusst. Benutzerübernahme ist eine Änderung von Zugriffsrechten.
+
+<a id="plugins"></a>
+## 10. Plugins aktivieren
+
+Diese Funktion aktiviert **bereits installierte Plugins** auf ausgewählten Websites. Sie kopiert weder Installationsdateien noch die Einstellungen einer Quellwebsite.
+
+1. Wähle **Plugins aktivieren**.
+2. Der Assistent wechselt direkt zur Plugin-Auswahl; eine Quellwebsite ist dafür nicht nötig.
+3. Markiere die gewünschten Plugins in der Tabelle.
+4. Klicke auf **Nächster Schritt »**.
+5. Wähle einzelne Zielwebsites oder eine Webseiten-Gruppe.
+6. Lege den Auftrag an.
+7. Öffne die Zielwebsites und prüfe deren Plugin-Verwaltung und die gegebenenfalls nötigen Einstellungen.
+
+![Ausschnitt aus der Auswahl der installierten Plugins](screenshots/12-plugins-auswaehlen.png)
+
+*Für die Plugin-Auswahl genügt das Häkchen in der Tabelle; es gibt hier keine zusätzliche Inhalts-Auswahlliste.*
+
+Nicht angezeigt werden Plugins, die nur netzwerkweit eingesetzt werden können oder bereits netzwerkweit aktiviert sind. Ein auf der Zielwebsite bereits aktives Plugin wird nicht nochmals aktiviert.
+
+Die Auswahl **Alle Seiten** wird bei dieser Aktion nicht angeboten.
+
+<a id="beitragstypen"></a>
+## 11. Eigene Beitragstypen kopieren
+
+Eigene Beitragstypen sind Inhalte, die durch zusätzliche Plugins bereitgestellt werden, beispielsweise Produkte, Veranstaltungen oder Kurse.
+
+1. Wähle **Benutzerdefinierter Beitragstyp (Produkte, Veranstaltungen...)**.
+2. Wähle die Quellwebsite.
+3. Wähle den angebotenen Beitragstyp. Mit **Beitragstypen aktualisieren** kannst du die Liste neu laden.
+4. Wähle die Inhalte aus und füge sie der Auswahlliste hinzu.
+5. Wähle Zusatzoptionen und Zielwebsites wie bei Beiträgen.
+6. Prüfe das Ergebnis in der Verwaltung des betreffenden Inhaltstyps.
+
+**Aktiviere die zugehörigen Funktionen zuerst auf der Zielwebsite.** Eine übernommene Veranstaltung oder ein Produkt ersetzt nicht die Einrichtung des Veranstaltungs- oder Shop-Plugins.
+
+Prüfe bei komplexen Inhalten besonders Bilder, Kategorien, Varianten, Verknüpfungen und die öffentliche Darstellung. Die normale Inhaltskopie ist keine Zusage, dass alle Daten eines beliebigen zusätzlichen Plugins vollständig übertragen werden.
+
+<a id="blog-templates"></a>
+## 12. PS Blog Templates verwenden
+
+Die Integration ist optional. Für normale Webseiten-Gruppen brauchst du sie nicht.
+
+1. Installiere und aktiviere **PS Blog Templates** im Netzwerk.
+2. Öffne **Content Kopierer → Einstellungen**.
+3. Setze unter **PS Blog Templates-Integration** das Häkchen bei **Aktivieren**.
+4. Klicke auf **Änderungen speichern**.
+
+![Die optionale PS Blog Templates-Integration in den Einstellungen](screenshots/09-einstellungen.png)
+
+Danach kannst du die zusätzlichen Blog-Vorlagengruppen als Ziele verwenden. In der Gruppenverwaltung erscheint außerdem der entsprechende zusätzliche Tab.
+
+Gemeint sind die Websites der jeweiligen Vorlagengruppe. Die Option ist keine allgemeine Theme- oder Layout-Kopierfunktion.
+
+Ist PS Blog Templates nicht aktiv, kann die Integration nicht eingeschaltet werden. Für einen ersten Test nutze weiterhin eine einzelne Zielwebsite oder eine normale Webseiten-Gruppe.
+
+<a id="kopierauftraege"></a>
+## 13. Kopieraufträge und größere Netzwerke
+
+### Warum die Zielwebsite aufgerufen werden muss
+
+Der Assistent legt für die Ziele Kopieraufträge an. Die jeweilige Zielwebsite verarbeitet diese beim nächsten Aufruf ihrer Website oder ihrer eigenen Verwaltung.
+
+**Nur die Netzwerkverwaltung aufzurufen reicht dafür nicht.**
+
+Wenn ein Inhalt nach der Abschlussmeldung noch fehlt:
+
+1. Öffne das Dashboard der Zielwebsite.
+2. Lass den Aufruf fertig laden.
+3. Öffne die passende Inhaltsliste.
+4. Prüfe dort die neue Kopie.
+
+Das gilt auch für Benutzerübernahmen und Plugin-Aktivierungen.
+
+### Bei „Alle Seiten“
+
+Für größere Netzwerke werden die Ziele schrittweise in die Warteschlange aufgenommen. Lass das Fenster geöffnet, bis dieser Vorgang abgeschlossen ist, und aktualisiere es währenddessen nicht.
+
+Eine Fortschrittsanzeige für das Anlegen der Aufträge bedeutet nicht, dass bereits alle Inhalte auf allen Zielwebsites geprüft wurden.
+
+### Praktische Vorgehensweise
+
+- Beginne mit wenigen Inhalten und einem Ziel.
+- Prüfe neue Inhaltstypen und Bildübernahmen zunächst separat.
+- Arbeite anschließend mit überschaubaren Webseiten-Gruppen.
+- Rufe die Ziele auf und kontrolliere Stichproben.
+- Starte keine unnötigen parallelen Großaufträge.
+
+<a id="hilfe"></a>
+## 14. Ergebnisse prüfen und Probleme lösen
+
+### Checkliste nach einem Kopierauftrag
+
+- [ ] Die Zielwebsite wurde nach dem Auftrag aufgerufen.
+- [ ] Der Inhalt steht in der passenden Liste.
+- [ ] Titel und Text stimmen.
+- [ ] Veröffentlichungsstatus und Datum passen.
+- [ ] Autor und benötigte Zugriffsrechte wurden geprüft.
+- [ ] Bilder und Beitragsbild sind erreichbar.
+- [ ] Kategorien, Kommentare und Elternseiten passen zu den gewählten Optionen.
+- [ ] Die öffentliche Ansicht wurde kontrolliert.
+
+### Häufige Situationen
+
+| Situation | Was du prüfen solltest |
+| --- | --- |
+| **Content Kopierer fehlt im Menü** | Bist du in der Netzwerkverwaltung und ist das Plugin netzwerkweit aktiv? Hat dein Konto die nötigen Rechte? |
+| **Die Quelle wird nicht gefunden** | Suche nach Unterordner oder Subdomain und klicke einen Suchvorschlag an. Alternativ nutze die Website-ID. |
+| **„Mindestens ein Element“ wird verlangt** | Füge die markierten Inhalte ausdrücklich zur separaten Auswahlliste hinzu. |
+| **Die Zielauswahl ist leer** | Bei Einzelzielen musst du nach der Auswahl auf **Seite hinzufügen** klicken. |
+| **Die Meldung erscheint, aber der Inhalt fehlt** | Öffne die Verwaltung der Zielwebsite. Prüfe anschließend Inhaltstyp, Filter und Papierkorb. |
+| **Ein zweiter Lauf übernimmt keine Änderungen** | Vorhandene Kopien werden bewusst übersprungen. Bearbeite sie auf dem Ziel; es gibt keine automatische Synchronisierung. |
+| **Bilder wurden nicht übernommen** | War **Bilder kopieren** beim ersten Kopierlauf ausgewählt? Ist die Quelle erreichbar? Ein erneuter Lauf ergänzt keine Bilder an einer vorhandenen Kopie. |
+| **Eine Gruppe wird nicht angeboten oder enthält keine Ziele** | Prüfe unter **Seiten-Gruppen → Webseiten** die Zuordnung der Websites. |
+| **Ein Benutzer erhält keinen neuen Zugriff** | Rufe die Zielwebsite auf und prüfe ihre Benutzerliste. Bereits vorhandene Mitgliedschaften und Rollen bleiben unverändert. |
+| **Ein Plugin fehlt in der Auswahl** | Prüfe, ob es installiert, nur netzwerkweit verwendbar oder bereits netzwerkweit aktiv ist. |
+| **Ein eigener Beitragstyp fehlt** | Prüfe die Quellwebsite und das dazugehörige Plugin; lade die Beitragstypen neu. |
+| **Die öffentliche Seite sieht leer oder anders aus** | Prüfe zuerst, ob der Inhalt im Ziel-Editor vorhanden ist. Danach kontrolliere Theme, Seitenvorlage und benötigte Plugins. |
+| **Die Blog Templates-Integration lässt sich nicht aktivieren** | PS Blog Templates muss zuerst im Netzwerk aktiviert sein. |
+
+Bei unerwarteten Fehlern prüfe erst die Zielwebsite, bevor du denselben Auftrag erneut startest. Halte für eine Support-Anfrage Quell- und Zielwebsite, Inhaltstyp, gewählte Optionen und die genaue Fehlermeldung bereit. Gib keine Passwörter weiter.
+
+<a id="fragen"></a>
+## 15. Häufige Fragen
+
+### Wird das Original gelöscht?
+
+Nein. Das Plugin kopiert beziehungsweise fügt hinzu. Es verschiebt keine Originalinhalte.
+
+### Kann ich zwischen zwei unabhängigen Installationen kopieren?
+
+Diese Anleitung und die Plugin-Oberfläche sind für Kopien **innerhalb desselben Multisite-Netzwerks** vorgesehen.
+
+### Wird eine komplette Website geklont?
+
+Nein. Du wählst bestimmte Inhalte, Benutzer oder Plugin-Aktivierungen aus. Themes, Menüs, Website-Einstellungen und alle Einstellungen zusätzlicher Plugins werden nicht als vollständige Website übernommen.
+
+### Werden vorhandene Zielinhalte überschrieben?
+
+Bereits erkannte Kopien werden übersprungen. Andere Zielinhalte werden nicht anhand gleicher Titel ersetzt.
+
+### Kann ich eine Kopie wieder rückgängig machen?
+
+Es gibt keinen gemeinsamen Rückgängig-Button für einen ganzen Auftrag. Du kannst kopierte Inhalte auf der Zielwebsite in den Papierkorb verschieben, Benutzerrechte dort anpassen oder aktivierte Plugins dort deaktivieren. Sichere vorher wichtige Daten.
+
+### Warum werden gleichnamige Inhalte nicht zusammengeführt?
+
+Ein gleicher Titel beweist nicht, dass es derselbe Originalinhalt ist. Die Kopiererkennung verwendet deshalb die Herkunft des Inhalts.
+
+### Brauche ich PS Blog Templates?
+
+Nein. Die normale Kopierfunktion und die eigenen Webseiten-Gruppen funktionieren ohne diese Integration.
+
 ---
-layout: psource-theme
-title: "Multisite Content Copier"
----
 
-<h2 align="center" style="color:#38c2bb;">📚 Multisite Content Copier</h2>
-
-<div class="menu">
-  <a href="https://github.com/cp-psource/multisite-content-copier/discussions" style="color:#38c2bb;">💬 Forum</a>
-  <a href="https://github.com/cp-psource/multisite-content-copier/releases" style="color:#38c2bb;">📝 Download</a>
-</div>
-
-## Multisite Content Copier is the perfect solution for copying posts, pages, users and even plugins to other sites on your multisite network.
-
-![wizard-copy-735x470](https://premium.wpmudev.org/wp-content/uploads/2013/11/wizard-copy-735x470-583x373.jpg)
-
- Follow the simple guide for quick copying.
-
-### A Big Time Saver
-
-Save a bunch of time on site creation and setup. Populate entire sites in a matter of seconds. Quickly seed new sites with content, users and plugins. Move content to a single site, groups of sites or every site on your network with a click.
-
-### Keep It Simple
-
-Start copying content out-of-the-box without any configuration. The included wizard guide makes it easy to begin sharing content across your network immediately. Pages, posts, custom post types, users and plugins can all be copied to new and existing sites. 
-
-### Share to Groups
-
-Use the site groups feature to share content across a group of sites simultaneously. You can have as many Site Groups as you wish, providing ultimate flexibility.
-
-![groups-735x470](https://premium.wpmudev.org/wp-content/uploads/2013/11/groups-735x4701-583x373.jpg)
-
- Share content to targeted site groups.
-
- 
-
-![blog-templates-735x470](https://premium.wpmudev.org/wp-content/uploads/2013/11/blog-templates-735x470-583x373.jpg)
-
- Integrate with New Blog Templates.
-
-### Template Integration
-
-Supercharge new site creation and network management with built-in New Blog Templates integration. Apply content to every site created in a specific template group to completely automate site creation.
-
- 
-
-### Quick Share
-
-Create new posts and quickly share the content to any site on your network directly from the post editor. Simply publish the post and then select where you would like to copy it to. Perfect for adding news items to multiple sites in your network.
-
-![post-copy-735x470](https://premium.wpmudev.org/wp-content/uploads/2013/11/post-copy-735x470-583x373.jpg)
-
- Share directly from the post editor.
-
-
-## Usage
-
-### To Get Started
-
-Start by reading [Installing plugins](../wpmu-manual/installing-regular-plugins-on-wpmu/) section in our comprehensive [WordPress and WordPress Multisite Manual](https://premium.wpmudev.org/manuals/) if you are new to WordPress.
-
-### Configuring the Settings
-
-Once installed and network-activated, you'll see a new menu item in your network admin: Content Copier. 
-
-![Multisite Content Copier- Menu](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-menu.png)
-
- The first thing you'll want to do is visit the Settings page. Click the _Settings_ sub-menu item now. The only setting you'll see there at this time is a checkbox to enable integration with the [New Blog Templates](https://premium.wpmudev.org/project/new-blog-template/ "WordPress New Blog Templates Plugin - WPMU DEV") plugin. 
-
-![Multisite Content Copier - Settings](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-settings.png)
-
- What does that do, you ask? Well, if you have the New Blog Templates plugin installed on your site, activating this feature will enable you to copy content only to sites using specific templates. Cool huh?
-
-*   Important: content can only be copied to template blogs created after Multisite Content Copier was installed.
-
-Already have New Blog Templates installed? Great, then check that box now to activate the integration. Now let's take a look at the _Sites Groups_ settings. Click that now. Under the first tab, _Groups_, you'll see a layout very similar to your blog categories. 
-
-![Multisite Content Copier - Groups](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-groups.png)
-
- This is where you can create groups of sites that you can target and copy content to. Go ahead and create a group now to help you get familiar with how this plugin works. Don't worry, you can edit or delete the group later. Now click the _Sites_ tab at the top of your screen. 
-
-![Multisite Content Copier - Sites](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-sites.png)
-
- Here, you'll see a list of all the sites in your network, and which site groups they are assigned to. To assign any site to a group (like the one you just created), check the box next to the site's name. Then select a group from the dropdown menu above, and click "Assign to Group". To remove a site from a group, check the box next to its name. Then select the group from the menu, and click "Remove from Group". You can add sites to multiple groups simply by repeating this process for each group. Next, click the _New Blog Templates_ tab at the top of the screen. Note that this tab will only appear if you have activated the integration under the Settings tab. 
-
-![Multisite Content Copier - Templates](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-templates.png)
-
- There are no settings under this tab as it is just there for convenience so you can see, at a glance, how many sites in your network are using each template.
-
-### Copying Content
-
-Now click the _Content Copier_ menu item. This is where the fun really begins! On the 1st screen, you can choose what content type you want to copy from the source site that you'll select in the next step. 
-
-![Multisite Content Copier - Copy Content](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-copy-content2.png)
-
- 1\. Copy pages, posts or custom post types.  
-2\. Copy users to other sites.  
-3\. Activate multiple plugins on other sites.
-
- 1\. To copy content, you must first select the content type.
-
-*   Check _Pages_ to select from all the pages on the source site. This includes published pages, as well as those in draft and pending status.
-*   Check _Posts_ to select from all the posts (published, draft & pending).
-*   Select _Custom Post Type_ to specify which post type to copy in the next step (published, draft & pending).
-
-2\. Yes, you can also copy _Users_ from the source site to other sites in your network with this plugin! Note that their roles & capabilities will be copied also. 3\. _Activate plugins_ enables you to activate multiple plugins on all the destination sites you select in the next step. Note that plugins that are network-activated will not be available (they're already active). Let's go through the process with the "Pages" content type to help you get familiar with how it all works. Select "Pages", then click Next Step. 
-
-![Multisite Content Copier - Select Source](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-select-source1.png)
-
- Here is where you select the site from which your selected content type will be copied. You can either enter the site ID, or start typing the site path in the search form. That will return all matching results as you type to make your selection really easy. Once you've selected the source site, click Next Step. On this screen, you can select exactly which pages to copy from the source site. You also have a few _Additional Options_ to enable if you wish. 
-
-![Multisite Content Copier - Select Items](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-select-content1.png)
-
- 1\. Copy images to destination sites.  
-2\. Set publish date to current date.  
-3\. Copy parents also.  
-4\. Even copy comments.  
-5\. Select the pages to copy.
-
- 1\. Check _Copy images_ to copy all images from the selected page(s) to the destination site(s) that you'll select at the next step.
-
-*   This also adds the attached images to the media library of the destination site(s).
-*   Note however that gallery shortcodes on pages of the source site will be copied as they are, so you may want to update those manually on destination site(s).
-
-2\. Check _Update page created date_ to set the date created on the destination site(s) to the date the content is copied. 3\. _Copy parents_ will also copy over the parents of all selected items.
-
-*   In our example, the "My Listings" page is a child of the "Listings" page. So if this option is selected, and we only select the "My Listings" child page, both child and parent will be copied.
-
-4\. _Copy comments_ will copy all comments from the source page(s) to the one(s) copied to the destination site(s). 5\. Once you have selected the Additional Options you prefer, select the page(s) you want to copy in the page list on the right. Then click the "Add items to the list" button. 
-
-![Multisite Content Copier - Content Add](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1330-content-add.png)
-
- Let's go ahead and select all of the above options to see how they work. If you are following along here on your own network, please be sure you have a page created with at least one image and one comment. Now click Next Step. This is where you select the site(s) you want to copy the content to. 
-
-![Multisite Content Copier - Select Destination](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-select-destination1.png)
-
- 1\. Copy to all sites in the network.  
-2\. Select site(s) to copy to.  
-3\. Copy to site groups.  
-4\. Copy to blog template groups.
-
- To select your destination sites, you have 4 options to choose from: 1\. _All Sites_ will copy your selected content to all other sites in your network, including the main site. 2\. _Single Site_ enables you to add specific sites to a list.
-
-*   First enter the site ID, or search just like you did for the source site.
-*   Then click Add Site to add it to the list.
-
-3\. _Site Group_ enables you to copy your selected content to all sites in a group that you created.
-
-*   All site groups you create will appear in this list.
-*   You can only copy to one group at a time.
-
-4\. _Select by Blog Templates_ groups enables you to copy your selected content to all sites created using one of your blog templates.
-
-*   Here again, you can only copy to one group at a time.
-*   Please also remember that MultiSite Content Copier can only copy to template blogs that are created after it is installed.
-
-Let's select a specific site for this walkthrough. 
-
-![Multisite Content Copier - Select Destination 2](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-select-destination-2.png)
-
-*   Enter the ID or path to a site you want to copy your page(s) to. You'll see the radio button is selected automatically.
-*   Click "Add Site" to add it to the list that will appear.
-*   Click Next Step.
-
-Guess what? You're done. Now visit the destination site you had selected earlier. You should see your new page has been copied over in its current status, with all attachments & comments, and with the current date. Cool huh?
-
-### Copying Custom Post Types
-
-There is one additional option to select if you have chosen to copy entries from a custom post type on the source site. 
-
-![Multisite Content Copier - Post Types](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1330-post-types.png)
-
- Once you have selected the source site in Step 2, click the Refresh post types button. That will list all the custom post types available on the source site. Select the one you wish to copy. If you don't see the custom post type you want in the list, you can manually enter the post-type slug in the field provided. On the next step, you can select the specific entries from that post type to copy to the destination site(s). You'll also be able to select to copy the terms (like tags, categories, etc) of you custom post-type. 
-
-![Multisite Content Copier Copy Terms](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1330-copy-terms.png)
-
- When copying any post-type, including regular ol' posts, you can also filter the post list to show only posts from a selected category or taxonomy. Very handy when you have a huge list of posts to sift through. 
-
-![Multisite Content Copier Taxonomy Filter](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1330-taxonomy-filter.png)
-
-### Copying from the Post Editor
-
-Oh yes, you can! On the post editing screen of every post type on every site in your network, the network admin has access to this new metabox: 
-
-![Multisite Content Copier - Post Metabox](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-post-metabox.png)
-
- That means that at any time, the network admin can copy any post, page or custom post type on any site in the network, right from the post editor!
-
-*   Note that from this metabox, you can choose to copy to all sites, or a group of sites. Copying to individually specified sites can only be done in the network admin.
-
-So if you find some great content in your network that you want to post to other sites, no problem... click and it's done. You're welcome. :)
-
-### Copying Users
-
-Once you have selected the source site, you can select to copy all users, or only specific ones. 
-
-![Multisite Content Copier - Copy Users](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1330-copy-users.png)
-
- Selecting users works just like selecting pages. Check the box next to each user you want to copy to the destination site(s). Then select "Add to the list" from the "Bulk Actions" menu, and click "Apply".
-
-### Activating Plugins
-
-Activating plugins is a little different than copying other post types. This feature will skip the source site step altogether, and go straight to Step 3 where you can select which plugins to activate on the destination site(s). 
-
-![Multisite Content Copier - Activate Plugins](https://premium.wpmudev.org/wp-content/uploads/2013/11/multisite-content-copier-1000-activate-plugins1.png)
-
- Simply check the box next to each plugin you want to activate on the destination site(s). Then click Next Step to select the destination site(s).
-
-*   Note that plugins designed to be network-activated only, or those that are already network activated are not available for selection in the list.
+[Zurück zur Plugin-Übersicht](../README.md)

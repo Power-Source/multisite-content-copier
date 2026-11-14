@@ -8,7 +8,7 @@ class Multisite_Content_Copier_Copier_Model {
 	/**
 	 * Return an instance of the class
 	 * 
-	 * @since 0.1
+	 * @since 1.0.0
 	 * 
 	 * @return Object
 	 */
@@ -42,6 +42,18 @@ class Multisite_Content_Copier_Copier_Model {
 		return $wpdb->get_row( $query );
 	}
 
+	public function get_copied_post_id( $source_blog_id, $source_post_id ) {
+		global $wpdb;
 
+		return (int) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT p.ID FROM $wpdb->posts p
+				INNER JOIN $wpdb->postmeta pm ON p.ID = pm.post_id
+				WHERE pm.meta_key = '_mcc_source' AND pm.meta_value = %s
+				ORDER BY p.ID ASC LIMIT 1",
+				$source_blog_id . ':' . $source_post_id
+			)
+		);
+	}
 
 }

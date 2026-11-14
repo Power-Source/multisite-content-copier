@@ -98,7 +98,7 @@ class Multisite_Content_Copier_Settings_Handler {
 	/**
 	 * Initialisiert die Plugin-Einstellungen
 	 * 
-	 * @since 0.1
+	 * @since 1.0.0
 	 */
 	private function init_settings() {
 		$current_settings = get_site_option( $this->settings_slug );

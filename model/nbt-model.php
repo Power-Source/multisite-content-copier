@@ -9,7 +9,7 @@ class Multisite_Content_Copier_NBT_Model {
 	/**
 	 * Return an instance of the class
 	 * 
-	 * @since 0.1
+	 * @since 1.0.0
 	 * 
 	 * @return Object
 	 */
