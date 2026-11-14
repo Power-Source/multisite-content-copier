@@ -99,7 +99,7 @@ class MCC_Posts_List_Table extends WP_List_Table {
 
 
 	function get_columns() {
-		$blogname_columns = ( is_subdomain_install() ) ? __( 'Domain' ) : __( 'Path' );
+		$blogname_columns = ( is_subdomain_install() ) ? __( 'Domain', MULTISTE_CC_LANG_DOMAIN ) : __( 'Path', MULTISTE_CC_LANG_DOMAIN );
 		$sites_columns = array(
 			'cb'          => '<input type="checkbox" />',
 			'title'    	  => __( 'Titel', MULTISTE_CC_LANG_DOMAIN ),
@@ -133,20 +133,20 @@ class MCC_Posts_List_Table extends WP_List_Table {
 		$status = '';
 		switch ( $item->post_status ) {
 			case 'private':
-				$status = __('Privat veröffentlicht');
+				$status = __( 'Privat veröffentlicht', MULTISTE_CC_LANG_DOMAIN );
 				break;
 			case 'publish':
-				$status = __('Veröffentlicht');
+				$status = __( 'Veröffentlicht', MULTISTE_CC_LANG_DOMAIN );
 				break;
 			case 'future':
-				$status = __('Geplant');
+				$status = __( 'Geplant', MULTISTE_CC_LANG_DOMAIN );
 				break;
 			case 'pending':
-				$status = __('Ausstehende Bewertung');
+				$status = __( 'Ausstehende Bewertung', MULTISTE_CC_LANG_DOMAIN );
 				break;
 			case 'draft':
 			case 'auto-draft':
-				$status = __('Entwurf');
+				$status = __( 'Entwurf', MULTISTE_CC_LANG_DOMAIN );
 				break;
 		}
 		return $status;
@@ -181,7 +181,8 @@ class MCC_Posts_List_Table extends WP_List_Table {
                 <?php foreach ( $taxonomies as $tax => $tax_name ): ?>
 					<?php 
 						$dropdowns .= wp_dropdown_categories( array(
-							'show_option_all' => sprintf( __( 'Alle %s anzeigen'), $tax_name ),
+							/* translators: %s: Taxonomy name. */
+							'show_option_all' => sprintf( __( 'Alle %s anzeigen', MULTISTE_CC_LANG_DOMAIN ), $tax_name ),
 							'name' => $tax,
 							'id' => 'filter_' . $tax,
 							'taxonomy' => $tax,

@@ -54,6 +54,10 @@ Das Plugin erkennt die Herkunft eines Inhalts, nicht nur seinen Titel. Gleichnam
 - **PHP 8.0 oder neuer**. Für den Betrieb empfehlen wir eine aktuell unterstützte PHP-Version deines Hosters.
 - Für zusätzliche Inhaltstypen die passenden Plugins auf den Quell- und Zielwebsites.
 
+### Sprache wählen
+
+Deutsch und **Englisch (USA)** werden unterstützt. Wähle die Sprache deiner Oberfläche unter **Benutzer → Profil → Sprache**. Ohne persönliche Sprachauswahl folgt das Plugin der Website-Sprache. Die englische Übersetzung ist als PO/MO-Datei enthalten; eine zusätzliche Plugin-Einstellung ist nicht nötig.
+
 ### Installation
 
 1. Öffne die **Netzwerkverwaltung → Plugins → Installieren**.

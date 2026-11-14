@@ -447,6 +447,12 @@ Bei unerwarteten Fehlern prüfe erst die Zielwebsite, bevor du denselben Auftrag
 <a id="fragen"></a>
 ## 15. Häufige Fragen
 
+### Wie stelle ich das Plugin auf Englisch um?
+
+Öffne **Benutzer → Profil**, wähle unter **Sprache** die Option **English (United States)** und speichere dein Profil. Die Plugin-Oberfläche verwendet danach die mitgelieferte englische Übersetzung.
+
+Mit **Website-Einstellung** folgt die Oberfläche der eingestellten Website-Sprache. Deutsch und Englisch (USA) werden unterstützt; ein eigener Sprachschalter in den Plugin-Einstellungen ist nicht nötig. Die Screenshots in diesem Handbuch zeigen die deutsche Oberfläche.
+
 ### Wird das Original gelöscht?
 
 Nein. Das Plugin kopiert beziehungsweise fügt hinzu. Es verschiebt keine Originalinhalte.

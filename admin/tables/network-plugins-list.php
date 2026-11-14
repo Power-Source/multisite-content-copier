@@ -12,8 +12,8 @@ class MCC_Plugins_List_Table extends WP_List_Table {
 	function __construct(){
         //Set parent defaults
         parent::__construct( array(
-            'singular'  => __( 'Plugin', MULTISTE_CC_ADMIN_DIR ),  
-            'plural'    => __( 'Plugins', MULTISTE_CC_ADMIN_DIR ), 
+            'singular'  => __( 'Plugin', MULTISTE_CC_LANG_DOMAIN ),
+            'plural'    => __( 'Plugins', MULTISTE_CC_LANG_DOMAIN ),
             'ajax'      => false        
         ) );
         
@@ -23,8 +23,8 @@ class MCC_Plugins_List_Table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             'cb'        => '<input type="checkbox" />',
-            'name'      => __( 'Plugin Name', MULTISTE_CC_ADMIN_DIR ),
-            'description'      => __( 'Plugin Beschreibung', MULTISTE_CC_ADMIN_DIR )
+            'name'      => __( 'Plugin Name', MULTISTE_CC_LANG_DOMAIN ),
+            'description'      => __( 'Plugin Beschreibung', MULTISTE_CC_LANG_DOMAIN )
         );
         return $columns;
     }

@@ -630,12 +630,14 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
         // request failed
         if ( ! $headers ) {
             @unlink( $upload['file'] );
+            /* translators: %s: Remote file URL. */
             return new WP_Error( 'import_file_error', sprintf( __('Remote-Server hat nicht auf Datei geantwortet: %s', MULTISTE_CC_LANG_DOMAIN ), $url ) );
         }
 
         // make sure the fetch was successful
         if ( $headers['response'] != '200' ) {
             @unlink( $upload['file'] );
+            /* translators: 1: HTTP status code, 2: HTTP status description. */
             return new WP_Error( 'import_file_error', sprintf( __('Remote-Server hat Fehlerantwort %1$d %2$s zurückgegeben', MULTISTE_CC_LANG_DOMAIN ), esc_html($headers['response']), get_status_header_desc($headers['response']) ) );
         }
 
@@ -649,6 +651,7 @@ class Multisite_Content_Copier_Post_Type_Copier extends Multisite_Content_Copier
         $max_size = (int) apply_filters( 'mcc_attachment_size_limit', 0 );
         if ( ! empty( $max_size ) && $filesize > $max_size ) {
             @unlink( $upload['file'] );
+            /* translators: %s: Maximum file size, including its unit. */
             return new WP_Error( 'import_file_error', sprintf(__('Remote-Datei ist zu groß, Limit ist %s', MULTISTE_CC_LANG_DOMAIN ), size_format($max_size) ) );
         }
 

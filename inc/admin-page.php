@@ -72,7 +72,7 @@
                 'network_menu' => false,
                 'enqueue_scripts' => false,
                 'enqueue_styles' => false,
-                'forbidden_message' => 'Du hast nicht genügend Berechtigungen für den Zugriff auf diese Seite',
+                'forbidden_message' => __( 'Du hast nicht genügend Berechtigungen für den Zugriff auf diese Seite', MULTISTE_CC_LANG_DOMAIN ),
                 'on_load' => array()
             );
 

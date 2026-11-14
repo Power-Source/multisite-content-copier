@@ -451,7 +451,7 @@ class Multisite_Content_Copier_Network_Main_Menu extends Multisite_Content_Copie
             <?php if ( 'add-cpt' == $this->wizard->get_value( 'mcc_action' ) ): ?>
 	            <p class="submit">
 	            	<div class="alignleft">
-	            		<?php submit_button( __( 'Beitragstypen aktualisieren', MULTISTE_CC_ADMIN_DIR ), 'secondary', 'mcc-refresh-cpts', false, array( 'id' => 'mcc-refresh-post-types' ) ); ?>
+				<?php submit_button( __( 'Beitragstypen aktualisieren', MULTISTE_CC_LANG_DOMAIN ), 'secondary', 'mcc-refresh-cpts', false, array( 'id' => 'mcc-refresh-post-types' ) ); ?>
 	            	</div>
 	            	<div class="alignleft">
 	            		<span class="spinner"></span>
@@ -804,7 +804,7 @@ class Multisite_Content_Copier_Network_Main_Menu extends Multisite_Content_Copie
 		ob_start();
 		?>
 			<li id="<?php echo $slug; ?>-<?php echo $id; ?>">
-				<span class="remove-box"><a class="mcc-remove-<?php echo $slug; ?>" href="" data-<?php echo $slug; ?>-id="<?php echo $id; ?>">Entfernen</a></span>
+				<span class="remove-box"><a class="mcc-remove-<?php echo $slug; ?>" href="" data-<?php echo $slug; ?>-id="<?php echo $id; ?>"><?php _e( 'Entfernen', MULTISTE_CC_LANG_DOMAIN ); ?></a></span>
 				<span class="id-box"><?php echo $id; ?></span> <span class="title-box"><?php echo $title; ?></span>
 				<input type="hidden" name="<?php echo $slug; ?>s_ids[]" value="<?php echo $id; ?>"></input>
 			</li>
@@ -965,7 +965,10 @@ class Multisite_Content_Copier_Network_Main_Menu extends Multisite_Content_Copie
 		if ( ! empty( $redirect_url ) ) {
 			?>
 			<p>
-				<?php printf( __( 'Klicke <a href="%s">hier</a>, um zur vorherigen Seite zurückzukehren.', MULTISTE_CC_LANG_DOMAIN ), esc_url( $redirect_url ) ); ?>
+				<?php
+				/* translators: %s: URL of the previous admin page. */
+				printf( __( 'Klicke <a href="%s">hier</a>, um zur vorherigen Seite zurückzukehren.', MULTISTE_CC_LANG_DOMAIN ), esc_url( $redirect_url ) );
+				?>
 			</p>
 			<?php
 		}

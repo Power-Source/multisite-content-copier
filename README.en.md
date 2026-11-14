@@ -54,6 +54,10 @@ The plugin identifies content by its origin, not just its title. Independently c
 - **PHP 8.0 or later**. For everyday use, we recommend a currently supported PHP version offered by your hosting provider.
 - The appropriate plugins on both the source and destination sites when copying additional content types.
 
+### Choose your language
+
+German and **English (United States)** are supported. Choose your interface language under **Users → Profile → Language**. Without a personal language preference, the plugin follows the site language. The English translation is included as PO/MO files; no additional plugin setting is needed.
+
 ### Installation
 
 1. Open **Network Admin → Plugins → Add New**.

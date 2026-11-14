@@ -48,7 +48,8 @@ class MCC_NBT_Integrator {
 		if ( ! $settings['blog_templates_integration'] ) {
 			$link = add_query_arg( 'page', 'mcc_settings_page', network_admin_url( 'admin.php' ) );
 			$dismiss_link = add_query_arg( 'dismiss_nbt_int_notice', 'true', network_admin_url() );
-			$message = sprintf( __( 'Das Plugin PS Blog Templates ist aktiviert. Vielleicht möchtest Du die <a href="%s">Integration mit Multisite Content Kopierer aktivieren</a> <a href="%s" class="button">Verwerfen</a>', MULTISTE_CC_LANG_DOMAIN ), $link, $dismiss_link );
+			/* translators: 1: Integration settings URL, 2: URL for dismissing the notice. */
+			$message = sprintf( __( 'Das Plugin PS Blog Templates ist aktiviert. Vielleicht möchtest Du die <a href="%1$s">Integration mit Multisite Content Kopierer aktivieren</a> <a href="%2$s" class="button">Verwerfen</a>', MULTISTE_CC_LANG_DOMAIN ), $link, $dismiss_link );
 			Multisite_Content_Copier_Errors_Handler::show_error_notice( $message );
 		}
 	}

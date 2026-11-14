@@ -1,44 +1,47 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Multisite-Content-Kopierer\n"
+"Project-Id-Version: Multisite Content Copier 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-19 16:24+0000\n"
-"PO-Revision-Date: 2023-03-12 09:33+0000\n"
 "Last-Translator: DerN3rd\n"
 "Language-Team: English (United States)\n"
-"Language: en_US\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-14 13:51+0000\n"
+"PO-Revision-Date: 2026-11-14 13:51+0000\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.3; wp-4.9.22\n"
-"X-Domain: mcc"
+"X-Domain: mcc\n"
 
 #: admin/tables/network-posts-list.php:120
 msgid "(kein Titel)"
 msgstr "(no title)"
 
-#: admin/tables/network-groups-list.php:55
+#. translators: %s: URL of the group edit screen.
+#: admin/tables/network-groups-list.php:56
 #, php-format
 msgid "<a href=\"%s\">Bearbeiten</a>"
 msgstr "<a href=\"%s\">Edit</a>"
 
-#: admin/tables/network-groups-list.php:56
+#. translators: %s: URL for deleting the group.
+#: admin/tables/network-groups-list.php:58
 #, php-format
 msgid "<a href=\"%s\">Löschen</a>"
 msgstr "<a href=\"%s\">Delete</a>"
 
-#: inc/errors-handler.php:29
+#. translators: 1: Plugin name, 2: Error message.
+#: inc/errors-handler.php:31
 #, php-format
-msgid "<b>%s Plugin Fehler</b>: %s"
-msgstr "<b>%s plugin error</b>: %s"
+msgid "<b>%1$s Plugin Fehler</b>: %2$s"
+msgstr "<b>%1$s plugin error</b>: %2$s"
 
 #: admin/pages/network-blogs-groups.php:100
 msgid "Abbrechen"
 msgstr "Cancel"
 
-#: admin/pages/network-main-page.php:372
+#: admin/pages/network-main-page.php:364
 msgid "Aktion auswählen"
 msgstr "Select action"
 
@@ -46,42 +49,37 @@ msgstr "Select action"
 msgid "Aktivieren"
 msgstr "Activate"
 
-#: admin/tables/network-posts-list.php:184
+#. translators: %s: Taxonomy name.
+#: admin/tables/network-posts-list.php:185
 #, php-format
 msgid "Alle %s anzeigen"
-msgstr "Show all %s "
+msgstr "Show all %s"
 
-#: admin/pages/network-main-page.php:712
+#: admin/pages/network-main-page.php:704
 msgid "Alle Benutzer"
 msgstr "All users"
 
-#: admin/pages/network-main-page.php:944
-msgid ""
-"Alle Blogs in die Warteschlange gestellt, bitte dieses Fenster nicht "
-"schließen oder aktualisieren"
+#: admin/pages/network-main-page.php:936
+msgid "Alle Blogs in die Warteschlange gestellt, bitte dieses Fenster nicht schließen oder aktualisieren"
 msgstr "All blogs queued, please do not close or refresh this window"
 
-#: admin/pages/network-main-page.php:740
+#: admin/pages/network-main-page.php:732
 msgid "Alle Seiten"
-msgstr "All pages"
+msgstr "All sites"
 
 #: admin/edit-post.php:128
 msgid "Alle Webseiten"
 msgstr "All websites"
 
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:130
-msgid "Auf neuere Version prüfen"
-msgstr "Check for newer version"
-
 #: admin/tables/network-blogs-list.php:160
 msgid "Aus der Gruppe entfernen"
 msgstr "Remove from group"
 
-#: admin/pages/network-main-page.php:376
+#: admin/pages/network-main-page.php:368
 msgid "Ausführen"
 msgstr "Execute"
 
-#: admin/pages/network-main-page.php:716
+#: admin/pages/network-main-page.php:708
 msgid "Ausgewählte Benutzer"
 msgstr "Selected users"
 
@@ -89,11 +87,12 @@ msgstr "Selected users"
 msgid "Ausstehende Bewertung"
 msgstr "Pending review"
 
-#: inc/settings-handler.php:30 inc/settings-handler.php:43
+#: inc/settings-handler.php:30
+#: inc/settings-handler.php:43
 msgid "Bedingungen kopieren ( Tags & Kategorien )"
-msgstr "Copy conditions ( tags & categories )"
+msgstr "Copy tags and categories"
 
-#: admin/pages/network-main-page.php:1253
+#: admin/pages/network-main-page.php:1273
 msgid "Beim Abrufen der Vorlageninformationen ist ein Fehler aufgetreten"
 msgstr "An error occurred while retrieving the template information"
 
@@ -101,23 +100,24 @@ msgstr "An error occurred while retrieving the template information"
 msgid "Beitrag"
 msgstr "Post"
 
-#: admin/pages/network-main-page.php:462
+#: admin/pages/network-main-page.php:454
 msgid "Beitragstypen aktualisieren"
 msgstr "Update post types"
 
-#: admin/pages/network-main-page.php:402 admin/tables/network-posts-list.php:18
+#: admin/pages/network-main-page.php:394
+#: admin/tables/network-posts-list.php:18
 msgid "Beiträge"
-msgstr "Contributions"
+msgstr "Posts"
 
-#: admin/pages/network-main-page.php:404
+#: admin/pages/network-main-page.php:396
 msgid "Benutzer"
-msgstr "User"
+msgstr "Users"
 
-#: admin/pages/network-main-page.php:710
+#: admin/pages/network-main-page.php:702
 msgid "Benutzer hinzufügen"
 msgstr "Add user"
 
-#: admin/pages/network-main-page.php:403
+#: admin/pages/network-main-page.php:395
 msgid "Benutzerdefinierter Beitragstyp (Produkte, Veranstaltungen...)"
 msgstr "Custom post type (products, events...)"
 
@@ -129,7 +129,8 @@ msgstr "User name"
 msgid "Bilder kopieren"
 msgstr "Copy images"
 
-#: inc/settings-handler.php:26 inc/settings-handler.php:39
+#: inc/settings-handler.php:26
+#: inc/settings-handler.php:39
 msgid "Bilder kopieren (erforderlich für vorgestellte Bilder)"
 msgstr "Copy images (required for featured images)"
 
@@ -145,16 +146,17 @@ msgstr "Please save this post if you want to copy it."
 msgid "Bitte speichere diesen Beitrag, wenn Du ihn synchronisieren möchtest."
 msgstr "Please save this post if you want to sync it."
 
-#: admin/pages/network-main-page.php:1063
-#: admin/pages/network-main-page.php:1192
+#: admin/pages/network-main-page.php:1083
+#: admin/pages/network-main-page.php:1212
 msgid "Bitte wähle eine Option"
 msgstr "Please select an option"
 
-#: admin/pages/network-main-page.php:450
+#: admin/pages/network-main-page.php:442
 msgid "Blog ID"
 msgstr "Blog ID"
 
-#: admin/edit-post.php:145 admin/tables/network-nbt-groups-list.php:14
+#: admin/edit-post.php:145
+#: admin/tables/network-nbt-groups-list.php:14
 msgid "Blog-Vorlagengruppe"
 msgstr "Blog Template Group"
 
@@ -164,40 +166,35 @@ msgstr "Blog Template Groups"
 
 #: admin/tables/network-groups-list.php:26
 msgid "Blogs Zähler"
-msgstr "Blog counter"
+msgstr "Site count"
 
-#: multisite-content-copier.php:312
+#: multisite-content-copier.php:302
 msgid "Content Kopierer"
 msgstr "Content copier"
 
-#: inc/integration/brainpress.php:16
+#: inc/integration/brainpress.php:17
 msgid "Courses and Units"
 msgstr "Courses and Units"
 
-#: inc/integration/nbt-integration.php:51
+#. translators: 1: Integration settings URL, 2: URL for dismissing the notice.
+#: inc/integration/nbt-integration.php:52
 #, php-format
-msgid ""
-"Das Plugin PS Blog Templates ist aktiviert. Vielleicht möchtest Du die <a "
-"href=\"%s\">Integration mit Multisite Content Kopierer aktivieren</a> <a "
-"href=\"%s\" class=\"button\">Verwerfen</a>"
-msgstr ""
-"Das Plugin PS Blog Templates ist aktiviert. Vielleicht möchtest Du die <a "
-"href=\"%s\">Integration mit Multisite Content Kopierer aktivieren</a> <a "
-"href=\"%s\" class=\"button\">Verwerfen</a>"
+msgid "Das Plugin PS Blog Templates ist aktiviert. Vielleicht möchtest Du die <a href=\"%1$s\">Integration mit Multisite Content Kopierer aktivieren</a> <a href=\"%2$s\" class=\"button\">Verwerfen</a>"
+msgstr "PS Blog Templates is active. You may want to <a href=\"%1$s\">enable its integration with Multisite Content Copier</a> <a href=\"%2$s\" class=\"button\">Dismiss</a>"
 
-#: inc/content-copier/content-copier-post-type.php:621
+#: inc/content-copier/content-copier-post-type.php:648
 msgid "Datei der Größe Null heruntergeladen"
 msgstr "Downloaded file of size zero"
 
-#: admin/pages/network-main-page.php:921
+#: admin/pages/network-main-page.php:913
 msgid "Deine ausgewählten Artikel wurden kopiert."
 msgstr "Your selected items have been copied."
 
-#: admin/pages/network-main-page.php:955
+#: admin/pages/network-main-page.php:947
 msgid "Deine ausgewählten Elemente wurden kopiert."
 msgstr "Your selected elements have been copied."
 
-#: admin/pages/network-main-page.php:1092
+#: admin/pages/network-main-page.php:1112
 msgid "Die Blog-ID existiert nicht"
 msgstr "The blog ID does not exist"
 
@@ -213,7 +210,7 @@ msgstr "The group has been updated."
 msgid "Die Gruppe wurde hinzugefügt"
 msgstr "The group was added"
 
-#: admin/pages/network-main-page.php:1236
+#: admin/pages/network-main-page.php:1256
 msgid "Dieser Gruppe sind keine Blogs zugeordnet."
 msgstr "No blogs are assigned to this group."
 
@@ -222,67 +219,69 @@ msgstr "No blogs are assigned to this group."
 msgid "Domain"
 msgstr "Domain"
 
-#: admin/pages/network-main-page.php:1141
+#: admin/pages/network-main-page.php:1161
 msgid "Du fügst der Liste mindestens einen Benutzer hinzu"
-msgstr "You add at least one user to the list"
+msgstr "You must add at least one user to the list"
 
 #: admin/edit-post.php:71
-msgid ""
-"Bereits vorhandene Kopien werden übersprungen. Änderungen auf den "
-"Zielwebseiten bleiben erhalten."
-msgstr ""
-"Existing copies are skipped. Changes on the destination sites are preserved."
+msgid "Bereits vorhandene Kopien werden übersprungen. Änderungen auf den Zielwebseiten bleiben erhalten."
+msgstr "Existing copies are skipped. Changes on the destination sites are preserved."
 
-#: admin/pages/network-main-page.php:1231
+#: admin/pages/network-main-page.php:1251
 msgid "Du hast eine falsche Gruppe ausgewählt"
 msgstr "You have selected a wrong group"
 
-#: admin/pages/network-main-page.php:1267
+#: admin/pages/network-main-page.php:1287
 msgid "Du hast eine falsche Vorlage ausgewählt"
 msgstr "You have selected a wrong template"
 
-#: admin/pages/network-main-page.php:1223
+#: admin/pages/network-main-page.php:1243
 msgid "Du hast keine Gruppe ausgewählt"
 msgstr "You have not selected a group"
 
-#: admin/pages/network-main-page.php:1258
+#: admin/pages/network-main-page.php:1278
 msgid "Du hast keine Vorlage ausgewählt"
 msgstr "You have not selected a template"
 
-#: admin/pages/network-main-page.php:1214
+#: admin/pages/network-main-page.php:1234
 msgid "Du hast keinen Blog ausgewählt"
 msgstr "You have not selected a blog"
 
-#: admin/pages/network-main-page.php:528 admin/pages/network-main-page.php:1129
+#: admin/pages/network-main-page.php:520
+#: admin/pages/network-main-page.php:1149
 msgid "Du musst der Liste mindestens ein Element hinzufügen"
 msgstr "You must add at least one element to the list"
 
-#: admin/edit-post.php:18 admin/edit-post.php:211
+#: admin/edit-post.php:18
+#: admin/edit-post.php:211
 msgid "Du musst ein Ziel auswählen"
 msgstr "You must select a destination"
 
-#: admin/edit-post.php:19 admin/edit-post.php:216 admin/edit-post.php:222
+#: admin/edit-post.php:19
+#: admin/edit-post.php:216
+#: admin/edit-post.php:222
 msgid "Du musst eine Gruppe auswählen"
 msgstr "You must select a group"
 
-#: admin/pages/network-main-page.php:1136
+#: admin/pages/network-main-page.php:1156
 msgid "Du musst eine Option auswählen"
 msgstr "You must select an option"
 
-#: admin/pages/network-main-page.php:1098
-#: admin/pages/network-main-page.php:1102
+#: admin/pages/network-main-page.php:1118
+#: admin/pages/network-main-page.php:1122
 msgid "Du musst einen Beitragstyp auswählen"
 msgstr "You must select a post type"
 
-#: admin/pages/network-main-page.php:1132
+#: admin/pages/network-main-page.php:1152
 msgid "Du musst mindestens ein Plugin auswählen"
 msgstr "You must select at least one plugin"
 
 #: admin/pages/network-settings-page.php:63
 msgid "Du musst zuerst das PS Blog Templates Plugin im Netzwerk aktivieren"
-msgstr "You must first activate the New Blog Templates plugin in the network"
+msgstr "You must first activate the PS Blog Templates plugin in the network"
 
-#: multisite-content-copier.php:338 multisite-content-copier.php:339
+#: multisite-content-copier.php:328
+#: multisite-content-copier.php:329
 msgid "Einstellungen"
 msgstr "Settings"
 
@@ -290,11 +289,11 @@ msgstr "Settings"
 msgid "Einstellungen gespeichert"
 msgstr "Settings saved"
 
-#: admin/pages/network-main-page.php:747
+#: admin/pages/network-main-page.php:739
 msgid "Einzelne Seite(n)"
-msgstr "Single page(s)"
+msgstr "Individual site(s)"
 
-#: admin/pages/network-main-page.php:374
+#: admin/pages/network-main-page.php:366
 msgid "Elemente auswählen"
 msgstr "Select elements"
 
@@ -303,10 +302,11 @@ msgstr "Select elements"
 msgid "Elemente zur Liste hinzufügen"
 msgstr "Add elements to the list"
 
-#: inc/settings-handler.php:28 inc/settings-handler.php:35
+#: inc/settings-handler.php:28
+#: inc/settings-handler.php:35
 #: inc/settings-handler.php:41
 msgid "Eltern kopieren"
-msgstr "Copy parents"
+msgstr "Copy parent content"
 
 #: admin/tables/network-users-list.php:85
 msgid "Email"
@@ -324,69 +324,55 @@ msgstr "Created"
 msgid "Erstellungsdatum der Seite aktualisieren"
 msgstr "Update page creation date"
 
-#: inc/settings-handler.php:27 inc/settings-handler.php:40
+#: inc/settings-handler.php:27
+#: inc/settings-handler.php:40
 msgid "Erstellungsdatum des Beitrags aktualisieren"
 msgstr "Update creation date of the post"
 
-#: admin/pages/network-main-page.php:1273
+#: admin/pages/network-main-page.php:1293
 msgid "Es sind keine Blogs an diese Vorlage angehängt."
 msgstr "There are no blogs attached to this template."
 
-#: admin/tables/network-posts-list.php:196
+#: admin/tables/network-posts-list.php:197
 msgid "Filter"
 msgstr "Filter"
 
-#: admin/pages/network-main-page.php:274 admin/pages/network-main-page.php:303
+#: admin/pages/network-main-page.php:266
+#: admin/pages/network-main-page.php:295
 msgid "Für diesen Blog sind keine benutzerdefinierten Beiträge registriert"
 msgstr "There are no custom posts registered for this blog"
 
 #: admin/tables/network-posts-list.php:142
 msgid "Geplant"
-msgstr "Planned"
+msgstr "Scheduled"
 
-#: admin/pages/network-main-page.php:444
-msgid ""
-"Gib die ID oder URL der Webseite ein, die den Beitrag enthält, den Du "
-"kopieren möchtest"
-msgstr ""
-"Enter the ID or URL of the web page that contains the post you want to copy"
+#: admin/pages/network-main-page.php:436
+msgid "Gib die ID oder URL der Webseite ein, die den Beitrag enthält, den Du kopieren möchtest"
+msgstr "Enter the ID or URL of the web page that contains the post you want to copy"
 
-#: admin/pages/network-main-page.php:448
-msgid ""
-"Gib die ID oder URL der Webseite ein, die die Benutzer enthält, die Du "
-"kopieren möchtest"
-msgstr ""
-"Enter the ID or URL of the web page that contains the users you want to copy"
+#: admin/pages/network-main-page.php:440
+msgid "Gib die ID oder URL der Webseite ein, die die Benutzer enthält, die Du kopieren möchtest"
+msgstr "Enter the ID or URL of the web page that contains the users you want to copy"
 
-#: admin/pages/network-main-page.php:446
-msgid ""
-"Gib die ID oder URL der Webseite ein, die die benutzerdefinierten "
-"Beitragstypen enthält, die Du kopieren möchtest"
-msgstr ""
-"Enter the ID or URL of the web page that contains the custom post types you "
-"want to copy"
+#: admin/pages/network-main-page.php:438
+msgid "Gib die ID oder URL der Webseite ein, die die benutzerdefinierten Beitragstypen enthält, die Du kopieren möchtest"
+msgstr "Enter the ID or URL of the web page that contains the custom post types you want to copy"
 
-#: admin/pages/network-main-page.php:442
-msgid ""
-"Gib die ID oder URL der Webseite ein, die die Seiten enthält, die Du "
-"kopieren möchtest"
-msgstr ""
-"Enter the ID or URL of the web page that contains the pages you want to copy"
+#: admin/pages/network-main-page.php:434
+msgid "Gib die ID oder URL der Webseite ein, die die Seiten enthält, die Du kopieren möchtest"
+msgstr "Enter the ID or URL of the web page that contains the pages you want to copy"
 
-#: admin/pages/network-main-page.php:455
-msgid ""
-"Gib entweder die Subdomain oder den Unterordner ein, dh. Gib für mysite."
-"mydomain.com oder mydomain.com/mysite \"mysite\" ein."
-msgstr ""
-"Enter either the subdomain or the subfolder, i.e. for mysite.mydomain.com or "
-"mydomain.com/mysite enter \"mysite\"."
+#: admin/pages/network-main-page.php:447
+msgid "Gib entweder die Subdomain oder den Unterordner ein, dh. Gib für mysite.mydomain.com oder mydomain.com/mysite \"mysite\" ein."
+msgstr "Enter either the subdomain or the subfolder, i.e. for mysite.mydomain.com or mydomain.com/mysite enter \"mysite\"."
 
 #: admin/tables/network-groups-list.php:14
 msgid "Gruppe"
 msgstr "Group"
 
 #: admin/tables/network-blogs-list.php:118
-#: admin/tables/network-groups-list.php:15 multisite-content-copier.php:326
+#: admin/tables/network-groups-list.php:15
+#: multisite-content-copier.php:316
 msgid "Gruppen"
 msgstr "Groups"
 
@@ -401,80 +387,64 @@ msgstr "Group name"
 msgid "Gruppenname darf nicht leer sein"
 msgstr "Group name must not be empty"
 
-#. Author URI of the plugin/theme
-msgid "https://n3rds.work"
-msgstr "https://n3rds.work"
-
-#. Plugin URI of the plugin/theme
-msgid "https://n3rds.work/cp_psource/multisite-content-kopierer/"
-msgstr "https://n3rds.work/cp_psource/multisite-content-kopierer/"
-
 #: admin/edit-post.php:114
 msgid "Inhalte synchronisieren"
 msgstr "Synchronize content"
 
-#: admin/pages/network-main-page.php:976
+#. translators: %s: URL of the previous admin page.
+#: admin/pages/network-main-page.php:970
 #, php-format
 msgid "Klicke <a href=\"%s\">hier</a>, um zur vorherigen Seite zurückzukehren."
 msgstr "Click <a href=\"%s\">here</a> to return to the previous page."
 
-#: inc/settings-handler.php:29 inc/settings-handler.php:36
+#: inc/settings-handler.php:29
+#: inc/settings-handler.php:36
 #: inc/settings-handler.php:42
 msgid "Kommentare kopieren"
 msgstr "Copy comments"
 
-#. Description of the plugin/theme
-msgid ""
-"Kopiere alle Inhalte von einer beliebigen Webseite in Deinem Netzwerk auf "
-"eine andere Webseite oder Gruppe von Webseiten im selben Netzwerk."
-msgstr ""
-"Copy all content from any web page in your network to another web page or "
-"group of web pages in the same network."
+#. Description of the plugin
+#: multisite-content-copier.php
+msgid "Kopiere alle Inhalte von einer beliebigen Webseite in Deinem Netzwerk auf eine andere Webseite oder Gruppe von Webseiten im selben Netzwerk."
+msgstr "Copy all content from any web page in your network to another web page or group of web pages in the same network."
 
 #: admin/edit-post.php:88
 msgid "Kopieren"
 msgstr "Copy"
 
-#: admin/tables/network-groups-list.php:69
+#: admin/tables/network-groups-list.php:71
 msgid "Löschen"
 msgstr "Delete"
 
-#: admin/pages/network-main-page.php:604
-msgid ""
-"Markiere die Elemente in der Liste, die Du kopieren möchtest, und klicke auf "
-"Elemente zur Liste hinzufügen. Ausgewählte Elemente werden unter dieser "
-"Nachricht angezeigt."
-msgstr ""
-"Select the elements in the list that you want to copy and click Add Elements "
-"to List. Selected elements will be displayed under this message."
+#: admin/pages/network-main-page.php:596
+msgid "Markiere die Elemente in der Liste, die Du kopieren möchtest, und klicke auf Elemente zur Liste hinzufügen. Ausgewählte Elemente werden unter dieser Nachricht angezeigt."
+msgstr "Select the elements in the list that you want to copy and click Add Elements to List. Selected elements will be displayed under this message."
 
-#: multisite-content-copier.php:107
-msgid ""
-"Multisite Content Copier ist ein Plugin nur für Multisites, bitte "
-"deaktiviere es."
-msgstr ""
-"Multisite Content Copier is a plugin for multisites only, please disable it."
+#: multisite-content-copier.php:100
+msgid "Multisite Content Copier ist ein Plugin nur für Multisites, bitte deaktiviere es."
+msgstr "Multisite Content Copier is a plugin for multisites only, please disable it."
 
 #: admin/edit-post.php:40
 msgid "Multisite Content Kopierer: Inhalte kopieren"
 msgstr "Multisite Content Copier: Copy content"
 
-#. Plugin Name of the plugin/theme
-#: multisite-content-copier.php:313
+#. Plugin Name of the plugin
+#: multisite-content-copier.php
+#: multisite-content-copier.php:303
 msgid "Multisite-Content-Kopierer"
 msgstr "Multisite Content Copier"
 
-#: admin/pages/network-main-page.php:789
+#: admin/pages/network-main-page.php:781
 msgid "Nach Blog-Vorlagengruppen auswählen"
 msgstr "Select By Blog Template Groups"
 
-#: multisite-content-copier.php:333
+#: multisite-content-copier.php:323
 msgid "PS Blog Templates"
-msgstr "New Blog Templates"
+msgstr "PS Blog Templates"
 
 #: admin/pages/network-settings-page.php:24
 msgid "PS Blog Templates-Integration"
-msgstr "New Blog Template Integration"
+msgstr "PS Blog Templates integration"
 
 #: admin/pages/network-blogs-groups.php:150
 #: admin/pages/network-blogs-groups.php:157
@@ -485,30 +455,23 @@ msgstr "Add new group"
 msgid "Nichts einzufügen"
 msgstr "Nothing to insert"
 
-#: admin/pages/network-main-page.php:645
-msgid ""
-"Nur Netzwerk oder bereits Netzwerk aktivierte Plugins werden nicht in der "
-"Liste angezeigt"
-msgstr ""
-"Only network or already network enabled plugins are not shown in the list"
+#: admin/pages/network-main-page.php:637
+msgid "Nur Netzwerk oder bereits Netzwerk aktivierte Plugins werden nicht in der Liste angezeigt"
+msgstr "Only network or already network enabled plugins are not shown in the list"
 
-#: admin/pages/network-main-page.php:546
+#: admin/pages/network-main-page.php:538
 msgid "Nächster Schritt &raquo;"
 msgstr "Next step &raquo;"
 
-#: admin/pages/network-main-page.php:842
-msgid ""
-"Oder füge den Slug Deines benutzerdefinierten Beitragstyps hier ein, wenn Du "
-"ihn nicht in der Liste siehst"
-msgstr ""
-"Or paste the slug of your custom post type here if you don't see it in the "
-"list"
+#: admin/pages/network-main-page.php:834
+msgid "Oder füge den Slug Deines benutzerdefinierten Beitragstyps hier ein, wenn Du ihn nicht in der Liste siehst"
+msgstr "Or paste the slug of your custom post type here if you don't see it in the list"
 
-#: admin/pages/network-main-page.php:453
+#: admin/pages/network-main-page.php:445
 msgid "Oder suche nach Webseiten-URL"
 msgstr "Or search by website URL"
 
-#: admin/pages/network-main-page.php:753
+#: admin/pages/network-main-page.php:745
 msgid "Or search by site URL"
 msgstr "Or search by site URL"
 
@@ -533,7 +496,7 @@ msgstr "Plugin Name"
 msgid "Plugins"
 msgstr "Plugins"
 
-#: admin/pages/network-main-page.php:405
+#: admin/pages/network-main-page.php:397
 msgid "Plugins aktivieren"
 msgstr "Activate plugins"
 
@@ -541,21 +504,24 @@ msgstr "Activate plugins"
 msgid "Privat veröffentlicht"
 msgstr "Privately published"
 
-#: admin/pages/network-main-page.php:373
+#: admin/pages/network-main-page.php:365
 msgid "Quelle auswählen"
 msgstr "Select source"
 
-#: inc/content-copier/content-copier-post-type.php:627
+#. translators: %s: Maximum file size, including its unit.
+#: inc/content-copier/content-copier-post-type.php:655
 #, php-format
 msgid "Remote-Datei ist zu groß, Limit ist %s"
 msgstr "Remote file is too big, limit is %s"
 
-#: inc/content-copier/content-copier-post-type.php:614
+#. translators: 1: HTTP status code, 2: HTTP status description.
+#: inc/content-copier/content-copier-post-type.php:641
 #, php-format
 msgid "Remote-Server hat Fehlerantwort %1$d %2$s zurückgegeben"
 msgstr "Remote server returned error response %1$d %2$s"
 
-#: inc/content-copier/content-copier-post-type.php:608
+#. translators: %s: Remote file URL.
+#: inc/content-copier/content-copier-post-type.php:634
 #, php-format
 msgid "Remote-Server hat nicht auf Datei geantwortet: %s"
 msgstr "Remote server did not respond to file: %s"
@@ -564,27 +530,29 @@ msgstr "Remote server did not respond to file: %s"
 msgid "Rolle"
 msgstr "Role"
 
-#: admin/pages/network-main-page.php:755
+#: admin/pages/network-main-page.php:747
 msgid "Seite hinzufügen"
 msgstr "Add page"
 
-#: admin/pages/network-main-page.php:401
+#: admin/pages/network-main-page.php:393
 msgid "Seiten"
 msgstr "Pages"
 
-#: admin/pages/network-main-page.php:751
+#: admin/pages/network-main-page.php:743
 msgid "Seiten ID"
-msgstr "Page ID"
+msgstr "Site ID"
 
-#: multisite-content-copier.php:320 multisite-content-copier.php:321
+#: multisite-content-copier.php:310
+#: multisite-content-copier.php:311
 msgid "Seiten-Gruppen"
-msgstr "Page groups"
+msgstr "Site groups"
 
 #: admin/tables/network-posts-list.php:106
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/network-main-page.php:623 admin/pages/network-main-page.php:721
+#: admin/pages/network-main-page.php:615
+#: admin/pages/network-main-page.php:713
 msgid "Suche"
 msgstr "Search"
 
@@ -592,57 +560,17 @@ msgstr "Search"
 msgid "Suche nach Vorlagennamen"
 msgstr "Search by template name"
 
-#: admin/pages/network-main-page.php:172
+#: admin/pages/network-main-page.php:170
 msgid "The blog ID does not exist. Try again."
 msgstr "The blog ID does not exist. Try again."
-
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:221
-#, php-format
-msgctxt "the plugin title"
-msgid ""
-"Entschuldige, es konnte nicht festgestellt werden, ob Updates für %s "
-"verfügbar sind."
-msgstr ""
-"Sorry, it could not be determined whether updates for %s are available."
-
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:219
-#, php-format
-msgctxt "the plugin title"
-msgid "Im PSOURCE REPO ist eine <b>neuere Version von %s</b> verfügbar!."
-msgstr "A <b>newer version of %s</b> is available in the PSOURCE REPO!."
-
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "Keine neuere Version von %s im PSOURCE REPO gefunden."
-msgstr "No newer version of %s found in PSOURCE REPO."
-
-#: psource/psource-plugin-update/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr "There is no changelog available."
 
 #: admin/tables/network-posts-list.php:105
 msgid "Titel"
 msgstr "Title"
 
-#: admin/pages/network-settings-page.php:26
-msgid ""
-"Um diese Option zu nutzen benötigst du das <a href=\"https://n3rds."
-"work/piestingtal_source/neue-blog-vorlagen/\" target=\"_blank\" "
-"rel=\"noopener\">PS Blog Templates Plugin</a>."
-msgstr ""
-"To use this option you need the <a href=\"https://n3rds."
-"work/piestingtal_source/new-blog-templates/\" target=\"_blank\" "
-"rel=\"noopener\">New Blog Templates Plugin</a>."
-
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:227
-#, php-format
-msgid "Unbekannter PSOURCE-UPDATTER-Status \"%s\""
-msgstr "Unknown PSOURCE UPDATTER status \"%s\""
-
 #: admin/tables/network-blogs-list.php:117
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: admin/tables/network-users-list.php:18
 msgid "User"
@@ -654,19 +582,15 @@ msgstr "Users"
 
 #: admin/tables/network-posts-list.php:139
 msgid "Veröffentlicht"
-msgstr ""
-
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:56
-msgid "View details"
-msgstr ""
+msgstr "Published"
 
 #: admin/tables/network-nbt-groups-list.php:25
 msgid "Vorlagenbeschreibung"
-msgstr ""
+msgstr "Template description"
 
 #: admin/tables/network-nbt-groups-list.php:24
 msgid "Vorlagenname"
-msgstr ""
+msgstr "Template name"
 
 #: admin/pages/network-blogs-groups.php:67
 msgid "Was ist eine Webseiten-Gruppe?"
@@ -677,7 +601,8 @@ msgid "Webseite"
 msgstr "Website"
 
 #: admin/tables/network-blogs-list.php:7
-#: admin/tables/network-nbt-groups-list.php:26 multisite-content-copier.php:327
+#: admin/tables/network-nbt-groups-list.php:26
+#: multisite-content-copier.php:317
 msgid "Webseiten"
 msgstr "Websites"
 
@@ -685,7 +610,8 @@ msgstr "Websites"
 msgid "Webseiten suchen"
 msgstr "Search websites"
 
-#: admin/edit-post.php:134 admin/pages/network-main-page.php:777
+#: admin/edit-post.php:134
+#: admin/pages/network-main-page.php:769
 msgid "Webseiten-Gruppe"
 msgstr "Website Group"
 
@@ -693,70 +619,58 @@ msgstr "Website Group"
 msgid "Webseiten-Gruppen"
 msgstr "Website groups"
 
-#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:79
-#, php-format
-msgid "Weitere Informationen zu %s"
-msgstr ""
-
 #: inc/settings-handler.php:46
-msgid ""
-"Wenn die Rolle im Zielblog nicht vorhanden ist, weise dem Benutzer diese "
-"Rolle zu"
-msgstr ""
+msgid "Wenn die Rolle im Zielblog nicht vorhanden ist, weise dem Benutzer diese Rolle zu"
+msgstr "If the role does not exist on the destination site, assign this role to the user"
 
 #: admin/pages/network-settings-page.php:29
-msgid ""
-"Wenn Du diese Option aktivierst, kannst Du eine PS Blog Templatesgruppe als "
-"Ziel für kopierte Inhalte auswählen."
-msgstr ""
+msgid "Wenn Du diese Option aktivierst, kannst Du eine PS Blog Templatesgruppe als Ziel für kopierte Inhalte auswählen."
+msgstr "Enable this option to select a PS Blog Templates group as the destination for copied content."
 
-#: admin/pages/network-main-page.php:706
-msgid ""
-"Wenn Du nicht alle Benutzer kopierst, markiere die Benutzer in der Liste, "
-"die Du kopieren möchtest, wähle Zur Liste hinzufügen und klicke auf "
-"Übernehmen. Ausgewählte Benutzer werden unter dieser Nachricht angezeigt."
-msgstr ""
-"If you don't copy all users, select the users in the list you want to copy, "
-"choose Add to List and click Apply. Selected users will be displayed under "
-"this message."
+#: admin/pages/network-main-page.php:698
+msgid "Wenn Du nicht alle Benutzer kopierst, markiere die Benutzer in der Liste, die Du kopieren möchtest, wähle Zur Liste hinzufügen und klicke auf Übernehmen. Ausgewählte Benutzer werden unter dieser Nachricht angezeigt."
+msgstr "If you don't copy all users, select the users in the list you want to copy, choose Add to List and click Apply. Selected users will be displayed under this message."
 
-#. Author of the plugin/theme
+#. Author of the plugin
+#: multisite-content-copier.php
 msgid "PSOURCE"
 msgstr "PSOURCE"
 
 #: admin/tables/network-users-list.php:145
 msgid "Wähle Alle"
-msgstr ""
+msgstr "Select all"
 
-#: admin/pages/network-main-page.php:704
+#: admin/pages/network-main-page.php:696
 msgid "Wähle Benutzer zum Kopieren aus"
-msgstr "Select user to copy"
+msgstr "Select users to copy"
 
-#: admin/pages/network-main-page.php:397
+#: admin/pages/network-main-page.php:389
 msgid "Wähle den Inhaltstyp aus, den Du kopieren möchtest."
 msgstr "Select the content type you want to copy."
 
-#: admin/pages/network-main-page.php:602
+#: admin/pages/network-main-page.php:594
 msgid "Wähle die Elemente aus, die Du kopieren möchtest."
 msgstr "Select the elements you want to copy."
 
-#: admin/pages/network-main-page.php:644
+#: admin/pages/network-main-page.php:636
 msgid "Wähle die Plugins aus, die Du aktivieren möchtest"
 msgstr "Select the plugins you want to activate"
 
-#: admin/pages/network-main-page.php:733
+#: admin/pages/network-main-page.php:725
 msgid "Wähle die Zielseiten aus"
-msgstr "Select the target pages"
+msgstr "Select the destination sites"
 
-#: inc/helpers.php:66 inc/helpers.php:110
+#: inc/helpers.php:66
+#: inc/helpers.php:110
 msgid "Wähle eine Gruppe"
 msgstr "Choose a group"
 
-#: admin/pages/network-main-page.php:173
+#: admin/pages/network-main-page.php:171
 msgid "You need to select a blog ID"
 msgstr "You need to select a blog ID"
 
-#: admin/edit-post.php:123 admin/pages/network-main-page.php:375
+#: admin/edit-post.php:123
+#: admin/pages/network-main-page.php:367
 msgid "Ziele auswählen"
 msgstr "Select destinations"
 
@@ -776,7 +690,8 @@ msgstr "Assign to group"
 msgid "Zurück zur Gruppenliste"
 msgstr "Back to the group list"
 
-#: admin/edit-post.php:154 admin/pages/network-main-page.php:612
+#: admin/edit-post.php:154
+#: admin/pages/network-main-page.php:604
 msgid "Zusatzoptionen"
 msgstr "Additional options"
 
@@ -784,3 +699,29 @@ msgstr "Additional options"
 #: admin/pages/network-settings-page.php:37
 msgid "Änderungen speichern"
 msgstr "Save changes"
+
+#. Plugin URI of the plugin
+#: multisite-content-copier.php
+msgid "https://psource.eimen.net/psource/multisite-content-kopierer/"
+msgstr "https://psource.eimen.net/psource/multisite-content-kopierer/"
+
+#. Author URI of the plugin
+#: multisite-content-copier.php
+msgid "https://github.com/cp-psource"
+msgstr "https://github.com/cp-psource"
+
+#: admin/pages/network-main-page.php:807
+msgid "Entfernen"
+msgstr "Remove"
+
+#: admin/pages/network-settings-page.php:26
+msgid "Um diese Option zu nutzen benötigst du das <a href=\"https://cp-psource.github.io/blogvorlagen/\" target=\"_blank\" rel=\"noopener\">PS Blog Templates Plugin</a>."
+msgstr "To use this option, you need the <a href=\"https://cp-psource.github.io/blogvorlagen/\" target=\"_blank\" rel=\"noopener\">PS Blog Templates plugin</a>."
+
+#: admin/tables/network-groups-list.php:86
+msgid "Fehler bei der Sicherheitsprüfung"
+msgstr "Security check failed"
+
+#: inc/admin-page.php:75
+msgid "Du hast nicht genügend Berechtigungen für den Zugriff auf diese Seite"
+msgstr "You do not have sufficient permissions to access this page"

@@ -114,7 +114,7 @@ class MCC_Sites_List_Table extends WP_List_Table {
 	function get_columns() {
 		$sites_columns = array(
 			'cb'          => '<input type="checkbox" />',
-			'blogname'    => __( 'URL' ),
+			'blogname'    => __( 'URL', MULTISTE_CC_LANG_DOMAIN ),
 			'groups'	  => __( 'Gruppen', MULTISTE_CC_LANG_DOMAIN )
 		);
 

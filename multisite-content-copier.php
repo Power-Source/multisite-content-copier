@@ -1,15 +1,14 @@
 <?php
 /*
 Plugin Name: Multisite-Content-Kopierer
-Plugin URI: https://cp-psource.github.io/multisite-content-copier/
+Plugin URI: https://psource.eimen.net/psource/multisite-content-kopierer/
 Description: Kopiere alle Inhalte von einer beliebigen Webseite in Deinem Netzwerk auf eine andere Webseite oder Gruppe von Webseiten im selben Netzwerk.
 Author: PSOURCE
 Version: 1.0.0
 Author URI: https://github.com/cp-psource
 Text Domain: mcc
-Domain Path: languages
+Domain Path: /languages
 Requires at least: 4.9
-Tested up to: 6.8.1
 Requires PHP: 8.0
 Network:true
 Tags: multisite plugin, multisite, classicpress-plugin
@@ -53,6 +52,8 @@ class Multisite_Content_Copier {
 
 		$this->set_globals();
 
+		add_action( 'init', array( &$this, 'load_text_domain' ), 0 );
+
 		if ( ! is_multisite() ) {
 			add_action( 'all_admin_notices', array( &$this, 'display_not_multisite_notice' ) );
 			return false;
@@ -65,8 +66,6 @@ class Multisite_Content_Copier {
 		add_action( 'init', array( &$this, 'init_plugin' ) );
 
 		add_action( 'wp_loaded', array( &$this, 'maybe_copy_content' ) );
-
-		add_action( 'plugins_loaded', array( &$this, 'load_text_domain' ) );
 
 		add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_styles' ) );
@@ -135,7 +134,7 @@ class Multisite_Content_Copier {
 		define( 'MULTISTE_CC_PLUGIN_FILE_DIR', plugin_dir_path( __FILE__ ) . 'multisite-content-copier.php' );
 
 		// Language domain
-		define( 'MULTISTE_CC_LANG_DOMAIN', 'MULTISTE_CC_LANG_DOMAIN' );
+		define( 'MULTISTE_CC_LANG_DOMAIN', 'mcc' );
 
 		// URLs
 		define( 'MULTISTE_CC_ASSETS_URL', MULTISTE_CC_PLUGIN_URL . 'assets/' );
@@ -285,13 +284,9 @@ class Multisite_Content_Copier {
 	/**
 	 * Load the plugin text domain and MO files
 	 * 
-	 * These can be uploaded to the main WP Languages folder
-	 * or the plugin one
+	 * Use the standard languages/plugins directory or bundled translations.
 	 */
 	public function load_text_domain() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), MULTISTE_CC_LANG_DOMAIN );
-
-		load_textdomain( MULTISTE_CC_LANG_DOMAIN, WP_LANG_DIR . '/' . MULTISTE_CC_LANG_DOMAIN . '/' . MULTISTE_CC_LANG_DOMAIN . '-' . $locale . '.mo' );
 		load_plugin_textdomain( MULTISTE_CC_LANG_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 

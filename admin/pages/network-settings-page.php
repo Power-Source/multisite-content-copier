@@ -23,10 +23,10 @@ class Multisite_Content_Copier_Network_Settings_Menu extends Multisite_Content_C
 			<form action="" method="post">
 				<h3><?php _e( 'PS Blog Templates-Integration', MULTISTE_CC_LANG_DOMAIN ); ?></h3>
 				<p>
-					<?php _e('Um diese Option zu nutzen benötigst du das <a href="https://cp-psource.github.io/blogvorlagen/" target="_blank" rel="noopener">PS Blog Templates Plugin</a>.'); ?>
+					<?php _e( 'Um diese Option zu nutzen benötigst du das <a href="https://cp-psource.github.io/blogvorlagen/" target="_blank" rel="noopener">PS Blog Templates Plugin</a>.', MULTISTE_CC_LANG_DOMAIN ); ?>
 				</p>
 				<p>
-					<?php _e('Wenn Du diese Option aktivierst, kannst Du eine PS Blog Templatesgruppe als Ziel für kopierte Inhalte auswählen.'); ?>
+					<?php _e( 'Wenn Du diese Option aktivierst, kannst Du eine PS Blog Templatesgruppe als Ziel für kopierte Inhalte auswählen.', MULTISTE_CC_LANG_DOMAIN ); ?>
 				</p>
 				<table class="form-table">
 					<?php $this->render_row( __( 'Aktivieren', MULTISTE_CC_LANG_DOMAIN ), array( &$this, 'render_nbt_integration_field' ) ); ?>

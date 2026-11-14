@@ -43,7 +43,7 @@ class Multisite_Content_Copier_Settings_Handler {
 				'copy_terms' 	=> __( 'Bedingungen kopieren ( Tags & Kategorien )', MULTISTE_CC_LANG_DOMAIN )
 			),
 			'user' => array(
-				'default_role'	=> __( 'Wenn die Rolle im Zielblog nicht vorhanden ist, weise dem Benutzer diese Rolle zu' )
+				'default_role'	=> __( 'Wenn die Rolle im Zielblog nicht vorhanden ist, weise dem Benutzer diese Rolle zu', MULTISTE_CC_LANG_DOMAIN )
 			)
 		);
 	}

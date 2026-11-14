@@ -78,12 +78,12 @@ class MCC_Users_List_Table extends WP_List_Table {
 	}
 
 	function get_columns() {
-		$blogname_columns = ( is_subdomain_install() ) ? __( 'Domain' ) : __( 'Path' );
+		$blogname_columns = ( is_subdomain_install() ) ? __( 'Domain', MULTISTE_CC_LANG_DOMAIN ) : __( 'Path', MULTISTE_CC_LANG_DOMAIN );
 		$sites_columns = array(
 			'cb'          => '<input type="checkbox" />',
-			'username'    => __( 'Benutzername' ),
-			'email'		  => __( 'Email' ),
-			'role'		  => __( 'Rolle' ),
+			'username'    => __( 'Benutzername', MULTISTE_CC_LANG_DOMAIN ),
+			'email'		  => __( 'Email', MULTISTE_CC_LANG_DOMAIN ),
+			'role'		  => __( 'Rolle', MULTISTE_CC_LANG_DOMAIN ),
 		);
 
 		return $sites_columns;
@@ -142,7 +142,7 @@ class MCC_Users_List_Table extends WP_List_Table {
 
 		if ( ! empty( $columns['cb'] ) ) {
 			static $cb_counter = 1;
-			$columns['cb'] = '<label class="screen-reader-text" for="cb-select-all-' . $cb_counter . '">' . __( 'Wähle Alle' ) . '</label>'
+			$columns['cb'] = '<label class="screen-reader-text" for="cb-select-all-' . $cb_counter . '">' . __( 'Wähle Alle', MULTISTE_CC_LANG_DOMAIN ) . '</label>'
 				. '<input id="cb-select-all-' . $cb_counter . '" ' . disabled( $this->enabled == false, true, false ) . ' type="checkbox" />';
 			$cb_counter++;
 		}
